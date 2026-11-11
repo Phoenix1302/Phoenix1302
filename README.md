@@ -38,17 +38,6 @@
 
 ---
 
-### 🔐 Protocol & Cryptographic Architecture
-
-| Protocol / Vector | Cipher Suite | Obfuscation Mechanism | Deployment Target |
-| :--- | :--- | :--- | :--- |
-| **AmneziaWG** | `ChaCha20-Poly1305` | Custom Junk Packets & Packet Header Randomization | Hardened Point-to-Point Tunnels |
-| **OpenConnect (`ocserv`)** | `TLS 1.3 / AES-256-GCM` | Camouflage Landing & Active Anti-Probing Decoys | Enterprise Stealth Gateways |
-| **WireGuard Core** | `Curve25519 / BLAKE2s` | Linux Kernel Native Fast-Path | High-Throughput Routing Nodes |
-| **Container Sandboxing** | `Rootless Cgroups v2` | Podman Quadlets & Systemd Ephemeral Namespaces | Zero-Trace Service Isolation |
-
----
-
 ### ⏳ Engineering Log & Milestones (2018 — Present)
 
 - **`2018` • Genesis & System Initialization**
@@ -59,26 +48,13 @@
   - Deep dive into Linux kernel networking internals, Berkeley sockets, client-server architectures, and low-level optimization.
 
 - **`2024 — 2025` • Traffic Analysis & Network Routing Mechanisms**
-  - Analyzing packet inspection heuristics, traffic filtering patterns, and CIDR/IP routing tables (`ip-list`).
-  - Architecting initial cross-platform GUI tunnel prototypes with Python and PySide6 (`bobrdobr-old`).
+  - Analyzing packet inspection heuristics, traffic filtering patterns, and CIDR/IP routing tables.
+  - Architecting initial cross-platform GUI tunnel prototypes with Python and modern Qt/PySide runtimes.
 
-- **`2026` • BobrDobr Ecosystem & Stealth Infrastructure**
-  - **Transition to Go:** Developing **[BobrDobr](https://github.com/Phoenix1302/BobrDobr)** — a high-throughput native GUI client supporting AmneziaWG, WireGuard, and OpenConnect.
-  - **Server-Side Hardening:** Deploying obfuscated gateways with active anti-probing camouflage (`ocserv-camouflage`).
-  - **Infrastructure Automation:** Orchestrating ephemeral tunnel nodes via Rootless **Podman Quadlets** and `bobrdobr_vpn-panel`.
-
----
-
-### ⚙️ Node Environment & Stack
-
-```ini
-Host Architecture    : Linux Hardened x86_64
-Primary Runtime      : Go 1.23+ • Python 3.12+ • C/C++ • C# • Java • JavaScript
-Containerization     : Podman (Rootless Quadlets & Systemd Units)
-Tunnels & Protocols  : WireGuard • AmneziaWG • OpenConnect • ocserv
-Defense Mechanisms  : Anti-Probing Camouflage • DPI Scrambler • Ephemeral RAM
-Audit & Persistence  : Discarded (/dev/null • Zero Logs)
-```
+- **`2026` • Next-Gen Stealth Tunnels & Infrastructure**
+  - **Transition to Go:** Developing high-throughput, cross-platform native GUI clients supporting multi-protocol tunnels (AmneziaWG, WireGuard, OpenConnect).
+  - **Server-Side Hardening:** Deploying obfuscated gateways with dynamic anti-probing camouflage and active DPI mitigation.
+  - **Infrastructure Automation:** Orchestrating ephemeral tunnel nodes via Rootless **Podman Quadlets** and automated web management panels.
 
 ---
 
