@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- CCTV VIEWFINDER / IDENTITY REDACTION BANNER -->
-<img src="./banner.svg?v=6" width="100%" alt="Phoenix1302 Surveillance Viewfinder Banner"/>
+<img src="./banner.svg?v=7" width="100%" alt="Phoenix1302 Surveillance Viewfinder Banner"/>
 
 <br/>
 
