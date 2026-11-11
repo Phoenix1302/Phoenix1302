@@ -34,7 +34,7 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=go,py,cpp,cs,java,c,bash,linux,docker,podman,git,githubactions,qt,cloudflare&theme=dark" />
+<img src="https://skillicons.dev/icons?i=go,py,cpp,cs,java,c,bash,linux,docker,js,html,css,git,githubactions,qt,cloudflare&theme=dark" />
 
 </div>
 
@@ -55,7 +55,7 @@
 
 ```ini
 Host Architecture    : Linux Hardened x86_64
-Primary Runtime      : Go 1.23+ • Python 3.12+ • C/C++ • C# • Java
+Primary Runtime      : Go 1.23+ • Python 3.12+ • C/C++ • C# • Java • JavaScript
 Containerization     : Podman (Rootless Quadlets & Systemd Units)
 Tunnels & Protocols  : WireGuard • AmneziaWG • OpenConnect • ocserv
 Defense Mechanisms  : Anti-Probing Camouflage • DPI Scrambler • Ephemeral RAM
