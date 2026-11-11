@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- MINIMALIST PREMIUM HEADER -->
-<img src="./banner.svg?v=4" width="100%" alt="Phoenix1302 Banner"/>
+<img src="./banner.svg?v=5" width="100%" alt="Phoenix1302 Banner"/>
 
 <br/>
 
