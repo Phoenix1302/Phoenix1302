@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- HEADER BANNER (MATRIX RAIN + RGB NEON) -->
-<img src="./banner.svg?v=2" width="100%" alt="Phoenix1302 Banner"/>
+<img src="./banner.svg?v=3" width="100%" alt="Phoenix1302 Banner"/>
 
 <!-- TYPING ANIMATION -->
 <a href="https://github.com/Phoenix1302">
@@ -45,18 +45,29 @@ EOF
 
 ---
 
-### 📊 Telemetry & Activity
+### 🛡️ Protocol & Defense Matrix
 
-<div align="center">
+| Vector / Component | Target Protocol | Operational Directive |
+| :--- | :--- | :--- |
+| **Traffic Obfuscation** | `AmneziaWG` / `WireGuard` | Предотвращение сигнатурного анализа и обход DPI-фильтрации |
+| **Stealth Gateway** | `OpenConnect` (`ocserv`) | Маскировка под стандартный TLS/HTTPS трафик с Anti-Probing защитой |
+| **Isolated Containers** | `Podman Quadlets` | Автономные сервисы в rootless-окружении с минимальными привилегиями |
+| **Data Retention** | `RAM-Disk` (`tmpfs`) | Полное отсутствие персистентных логов (`/dev/null`) |
 
-<img src="https://github-readme-stats-salesp07.vercel.app/api?username=Phoenix1302&show_icons=true&hide_border=true&bg_color=0D1117&title_color=00FF9D&icon_color=00FF9D&text_color=8B949E" width="48%" />
-<img src="https://github-readme-stats-salesp07.vercel.app/api/top-langs/?username=Phoenix1302&layout=compact&hide_border=true&bg_color=0D1117&title_color=00FF9D&text_color=8B949E" width="44%" />
+---
 
-<br/>
+### ⚡ Operational Directives
 
-<img src="https://streak-stats.demolab.com/?user=Phoenix1302&theme=dark&hide_border=true&background=0D1117&ring=00FF9D&fire=00FF9D&currStreakNum=00FF9D" width="93%" />
+```bash
+$ ping -c 1 anonymity.local
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.042 ms
 
-</div>
+--- ACTIVE INITIATIVES ---
+[+] Developing high-throughput GUI tunnel clients in Go
+[+] Engineering anti-probing decoys & camouflage landing pages
+[+] Automating hardened VPN clusters via Podman Quadlets
+[+] Researching packet padding, header scrambling & entropy shaping
+```
 
 ---
 
