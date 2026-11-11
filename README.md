@@ -1,20 +1,20 @@
 <div align="center">
 
-<!-- MINIMALIST PREMIUM HEADER -->
-<img src="./banner.svg?v=5" width="100%" alt="Phoenix1302 Banner"/>
+<!-- CCTV VIEWFINDER / IDENTITY REDACTION BANNER -->
+<img src="./banner.svg?v=6" width="100%" alt="Phoenix1302 Surveillance Viewfinder Banner"/>
 
 <br/>
 
-<!-- REFINED TYPING MONOSPACE -->
+<!-- CCTV STATUS TYPING FEED (UNDER BANNER) -->
 <a href="https://github.com/Phoenix1302">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&width=620&lines=Building+stealth+network+tunnels+%26+system+tools;Go+%E2%80%A2+Python+%E2%80%A2+WireGuard+%E2%80%A2+AmneziaWG+%E2%80%A2+Podman;Focus%3A+traffic+obfuscation+%26+anti-probing;Privacy+by+design.+Zero+logs.+Always." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2800&pause=1000&color=3FB950&center=true&vCenter=true&width=640&lines=%3E+%5BCAM_01%5D%3A+TARGET+IDENTITY+CLOAKED+%2F%2F+FEED+ENCRYPTED;%3E+%5BSEC_NODE%5D%3A+BUILDING+STEALTH+NETWORK+TUNNELS+%26+PROXIES;%3E+%5BPROTOCOLS%5D%3A+AMNEZIAWG+%E2%80%A2+WIREGUARD+%E2%80%A2+OPENCONNECT;%3E+%5BPOLICY%5D%3A+ZERO+LOGS+%E2%80%A2+EPHEMERAL+RAM+%E2%80%A2+NO+PERSISTENCE;%3E+%5BSTATUS%5D%3A+UNDETECTED+%2F%2F+127.0.0.1+%2F%2F+99.99%25+UPTIME" alt="Surveillance Feed Typing" />
 </a>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/identity-redacted-161b22?style=flat-square&logo=shield&logoColor=8b949e" />
-  <img src="https://img.shields.io/badge/network-stealth-161b22?style=flat-square&logo=wireguard&logoColor=8b949e" />
-  <img src="https://img.shields.io/badge/runtime-go%20%7C%20python-161b22?style=flat-square&logo=go&logoColor=8b949e" />
-  <img src="https://img.shields.io/badge/storage-zero--logs-161b22?style=flat-square&logo=linux&logoColor=8b949e" />
+  <img src="https://img.shields.io/badge/identity-cloaked-161b22?style=flat-square&logo=shield&logoColor=3fb950" />
+  <img src="https://img.shields.io/badge/feed-encrypted-161b22?style=flat-square&logo=wireguard&logoColor=3fb950" />
+  <img src="https://img.shields.io/badge/runtime-go%20%7C%20python-161b22?style=flat-square&logo=go&logoColor=3fb950" />
+  <img src="https://img.shields.io/badge/storage-zero--logs-161b22?style=flat-square&logo=linux&logoColor=3fb950" />
 </p>
 
 </div>
