@@ -13,7 +13,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/identity-cloaked-161b22?style=flat-square&logo=shield&logoColor=3fb950" />
   <img src="https://img.shields.io/badge/feed-encrypted-161b22?style=flat-square&logo=wireguard&logoColor=3fb950" />
-  <img src="https://img.shields.io/badge/runtime-go%20%7C%20python-161b22?style=flat-square&logo=go&logoColor=3fb950" />
+  <img src="https://img.shields.io/badge/runtime-multi--stack-161b22?style=flat-square&logo=gnubash&logoColor=3fb950" />
   <img src="https://img.shields.io/badge/storage-zero--logs-161b22?style=flat-square&logo=linux&logoColor=3fb950" />
 </p>
 
@@ -24,7 +24,7 @@
 ### 🛰️ Core Engineering Focus
 
 - **Network Obfuscation:** Development of DPI-resistant tunnels based on **AmneziaWG**, **WireGuard**, and **OpenConnect** (`ocserv`).
-- **Systems & Tooling:** High-performance backend utilities and native GUI clients built in **Go** and **Python**.
+- **Systems & Tooling:** High-performance backend utilities and native GUI clients built in **Go**, **Python**, **C++**, and **C#**.
 - **Container Infrastructure:** Automated, rootless deployments with **Podman Quadlets** and systemd service hardening.
 - **Privacy Architecture:** Ephemeral execution states, RAM-only operation (`tmpfs`), and zero data persistence.
 
@@ -34,9 +34,20 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=go,py,bash,c,linux,docker,podman,git,githubactions,qt,cloudflare&theme=dark" />
+<img src="https://skillicons.dev/icons?i=go,py,cpp,cs,java,c,bash,linux,docker,podman,git,githubactions,qt,cloudflare&theme=dark" />
 
 </div>
+
+---
+
+### 🔐 Protocol & Cryptographic Architecture
+
+| Protocol / Vector | Cipher Suite | Obfuscation Mechanism | Deployment Target |
+| :--- | :--- | :--- | :--- |
+| **AmneziaWG** | `ChaCha20-Poly1305` | Custom Junk Packets & Packet Header Randomization | Hardened Point-to-Point Tunnels |
+| **OpenConnect (`ocserv`)** | `TLS 1.3 / AES-256-GCM` | Camouflage Landing & Active Anti-Probing Decoys | Enterprise Stealth Gateways |
+| **WireGuard Core** | `Curve25519 / BLAKE2s` | Linux Kernel Native Fast-Path | High-Throughput Routing Nodes |
+| **Container Sandboxing** | `Rootless Cgroups v2` | Podman Quadlets & Systemd Ephemeral Namespaces | Zero-Trace Service Isolation |
 
 ---
 
@@ -44,7 +55,7 @@
 
 ```ini
 Host Architecture    : Linux Hardened x86_64
-Primary Runtime      : Go 1.23+ • Python 3.12+
+Primary Runtime      : Go 1.23+ • Python 3.12+ • C/C++ • C# • Java
 Containerization     : Podman (Rootless Quadlets & Systemd Units)
 Tunnels & Protocols  : WireGuard • AmneziaWG • OpenConnect • ocserv
 Defense Mechanisms  : Anti-Probing Camouflage • DPI Scrambler • Ephemeral RAM
