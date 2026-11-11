@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- HEADER BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:0d1117&stroke=00ff9d&strokeWidth=2&height=220&section=header&text=Phoenix1302&fontSize=54&fontColor=00ff9d&fontAlignY=38&desc=%5B%20ANONYMOUS%20NETWORK%20ENGINEER%20%7C%20UNDETECTED%20%5D&descAlignY=62&descAlign=50" width="100%"/>
+<!-- HEADER BANNER (MATRIX RAIN + RGB NEON) -->
+<img src="./banner.svg" width="100%" alt="Phoenix1302 Banner"/>
 
 <!-- TYPING ANIMATION -->
 <a href="https://github.com/Phoenix1302">
