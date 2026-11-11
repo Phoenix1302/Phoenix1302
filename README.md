@@ -1,80 +1,58 @@
 <div align="center">
 
-<!-- HEADER BANNER (MATRIX RAIN + RGB NEON) -->
-<img src="./banner.svg?v=3" width="100%" alt="Phoenix1302 Banner"/>
-
-<!-- TYPING ANIMATION -->
-<a href="https://github.com/Phoenix1302">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2800&pause=1000&color=00FF9D&center=true&vCenter=true&width=620&lines=whoami+--status+...;IDENTITY%3A+%5BREDACTED%5D+%E2%80%A2+GHOST+MODE;Building+next-gen+stealth+network+tunnels+%E2%9A%A1;Go+%7C+Python+%7C+AmneziaWG+%7C+WireGuard+%7C+Podman;Traffic%3A+Cloaked+%7C+Logs%3A+%2Fdev%2Fnull+%F0%9F%9B%A1%EF%B8%8F" alt="Typing SVG" />
-</a>
+<!-- MINIMALIST PREMIUM HEADER -->
+<img src="./banner.svg?v=4" width="100%" alt="Phoenix1302 Banner"/>
 
 <br/>
 
-<!-- SYSTEM STATUS BADGES -->
+<!-- REFINED TYPING MONOSPACE -->
+<a href="https://github.com/Phoenix1302">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&width=620&lines=Building+stealth+network+tunnels+%26+system+tools;Go+%E2%80%A2+Python+%E2%80%A2+WireGuard+%E2%80%A2+AmneziaWG+%E2%80%A2+Podman;Focus%3A+traffic+obfuscation+%26+anti-probing;Privacy+by+design.+Zero+logs.+Always." alt="Typing SVG" />
+</a>
+
 <p align="center">
-  <img src="https://img.shields.io/badge/IDENTITY-%5BREDACTED%5D-0D1117?style=for-the-badge&logo=torbrowser&logoColor=00FF9D" />
-  <img src="https://img.shields.io/badge/LOCATION-127.0.0.1-0D1117?style=for-the-badge&logo=gnubash&logoColor=00FF9D" />
-  <img src="https://img.shields.io/badge/LOGS-%2Fdev%2Fnull-0D1117?style=for-the-badge&logo=linux&logoColor=00FF9D" />
-  <img src="https://img.shields.io/badge/STATUS-UNDETECTED-0D1117?style=for-the-badge&logo=shield&logoColor=00FF9D" />
-  <img src="https://img.shields.io/badge/TUNNELS-ACTIVE-0D1117?style=for-the-badge&logo=wireguard&logoColor=00FF9D" />
+  <img src="https://img.shields.io/badge/identity-redacted-161b22?style=flat-square&logo=shield&logoColor=8b949e" />
+  <img src="https://img.shields.io/badge/network-stealth-161b22?style=flat-square&logo=wireguard&logoColor=8b949e" />
+  <img src="https://img.shields.io/badge/runtime-go%20%7C%20python-161b22?style=flat-square&logo=go&logoColor=8b949e" />
+  <img src="https://img.shields.io/badge/storage-zero--logs-161b22?style=flat-square&logo=linux&logoColor=8b949e" />
 </p>
 
 </div>
 
 ---
 
-### 🛠️ Weapon of Choice (Tech Arsenal)
+### 🛰️ Core Engineering Focus
+
+- **Network Obfuscation:** Development of DPI-resistant tunnels based on **AmneziaWG**, **WireGuard**, and **OpenConnect** (`ocserv`).
+- **Systems & Tooling:** High-performance backend utilities and native GUI clients built in **Go** and **Python**.
+- **Container Infrastructure:** Automated, rootless deployments with **Podman Quadlets** and systemd service hardening.
+- **Privacy Architecture:** Ephemeral execution states, RAM-only operation (`tmpfs`), and zero data persistence.
+
+---
+
+### 🛠️ Tech Stack & Tooling
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=go,py,bash,c,linux,docker,podman,git,githubactions,qt,cloudflare,regex&theme=dark" />
+<img src="https://skillicons.dev/icons?i=go,py,bash,c,linux,docker,podman,git,githubactions,qt,cloudflare&theme=dark" />
 
 </div>
 
-<br/>
-
-```bash
-[phoenix@node-01 ~]$ cat << 'EOF' > capabilities.txt
-• Languages:     Go (Core), Python, Bash, C
-• Networking:    WireGuard, AmneziaWG, OpenConnect, ocserv, DNS/TLS cloaking
-• Containers:    Podman (Quadlets), Docker, Container hardening
-• Systems:       Linux (Debian/Arch/RHEL), Systemd services, iptables/nftables
-• Security:      Traffic obfuscation, DPI evasion, anti-probing mechanisms
-EOF
-```
-
 ---
 
-### 🛡️ Protocol & Defense Matrix
+### ⚙️ Node Environment & Stack
 
-| Vector / Component | Target Protocol | Operational Directive |
-| :--- | :--- | :--- |
-| **Traffic Obfuscation** | `AmneziaWG` / `WireGuard` | Предотвращение сигнатурного анализа и обход DPI-фильтрации |
-| **Stealth Gateway** | `OpenConnect` (`ocserv`) | Маскировка под стандартный TLS/HTTPS трафик с Anti-Probing защитой |
-| **Isolated Containers** | `Podman Quadlets` | Автономные сервисы в rootless-окружении с минимальными привилегиями |
-| **Data Retention** | `RAM-Disk` (`tmpfs`) | Полное отсутствие персистентных логов (`/dev/null`) |
-
----
-
-### ⚡ Operational Directives
-
-```bash
-$ ping -c 1 anonymity.local
-64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.042 ms
-
---- ACTIVE INITIATIVES ---
-[+] Developing high-throughput GUI tunnel clients in Go
-[+] Engineering anti-probing decoys & camouflage landing pages
-[+] Automating hardened VPN clusters via Podman Quadlets
-[+] Researching packet padding, header scrambling & entropy shaping
+```ini
+Host Architecture    : Linux Hardened x86_64
+Primary Runtime      : Go 1.23+ • Python 3.12+
+Containerization     : Podman (Rootless Quadlets & Systemd Units)
+Tunnels & Protocols  : WireGuard • AmneziaWG • OpenConnect • ocserv
+Defense Mechanisms  : Anti-Probing Camouflage • DPI Scrambler • Ephemeral RAM
+Audit & Persistence  : Discarded (/dev/null • Zero Logs)
 ```
 
 ---
 
 <div align="center">
-
-```
->>> TRANSMISSION_TERMINATED: STAY_UNDETECTED <<<
-```
-
+  <sub><code>Phoenix1302</code> • <i>Privacy is a fundamental right.</i></sub>
 </div>
