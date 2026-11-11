@@ -23,39 +23,6 @@
 
 ---
 
-### 📡 System Manifest
-
-```yaml
-entity: Phoenix1302
-role: Network Systems & Security Developer
-operational_status: Stealth / Active
-clearance_level: Root
-primary_directives:
-  - Protocol Cloaking & Traffic Obfuscation
-  - Anti-Probing Camouflage & DPI Bypassing
-  - Stealth Tunnels (WireGuard, AmneziaWG, OpenConnect)
-  - Containerized Infrastructure with Podman Quadlets
-manifesto: "Packets must flow. Log nothing. Trust math, not intermediaries."
-```
-
----
-
-### 🦫 Project in Focus: [BobrDobr](https://github.com/Phoenix1302/BobrDobr)
-
-> **Cross-platform client & infrastructure for next-gen secure tunnels.**
-
-```
-       [ Client ]  ──( AmneziaWG / WireGuard / OpenConnect )──>  [ Camouflage Gateway ]
-           │                                                               │
-   [ Native GUI (Go) ]                                           [ Podman Quadlets ]
-```
-
-* 🛡️ **Anti-DPI & Anti-Probing:** Устойчивость к блокировкам и глубокому анализу пакетов.
-* ⚡ **High-Performance Core:** Написан на Go с акцентом на минимальный footprint и скорость.
-* 📦 **Containerized Backend:** Серверные панели управления и автоматизация развертывания через Podman.
-
----
-
 ### 🛠️ Weapon of Choice (Tech Arsenal)
 
 <div align="center">
