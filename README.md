@@ -51,21 +51,21 @@
 
 ### ⏳ Engineering Log & Milestones (2018 — Present)
 
-- **`2018` • Genesis & System Init**
-  - Регистрация аккаунта на GitHub (май 2018). Первые практические эксперименты с веб-хостингом, основами фронтенда и базовыми системными скриптами.
+- **`2018` • Genesis & System Initialization**
+  - GitHub account registration (May 2018). Initial practical experiments with web hosting infrastructure, frontend foundations, and core system scripting.
 
-- **`2019 — 2023` • Низкоуровневые системы и алгоритмический стек**
-  - Глубокое погружение в компилируемые языки (**C**, **C++**, **C#**, **Java**) и скриптинг (**Python**, **Bash**).
-  - Изучение сетевого стека Linux, сокетов, клиент-серверных протоколов и системного программирования.
+- **`2019 — 2023` • Low-Level Systems & Algorithmic Stack**
+  - In-depth transition to compiled languages (**C**, **C++**, **C#**, **Java**) and systems scripting (**Python**, **Bash**).
+  - Deep dive into Linux kernel networking internals, Berkeley sockets, client-server architectures, and low-level optimization.
 
-- **`2024 — 2025` • Исследование сетевых блокировок и маршрутизации**
-  - Анализ паттернов фильтрации трафика, работа с IP/CIDR-диапазонами и списками маршрутизации (`ip-list`).
-  - Проектирование первых GUI-клиентов для защищенных туннелей на базе Python и PySide6 (`bobrdobr-old`).
+- **`2024 — 2025` • Traffic Analysis & Network Routing Mechanisms**
+  - Analyzing packet inspection heuristics, traffic filtering patterns, and CIDR/IP routing tables (`ip-list`).
+  - Architecting initial cross-platform GUI tunnel prototypes with Python and PySide6 (`bobrdobr-old`).
 
-- **`2026` • Экосистема BobrDobr & Stealth-инфраструктура**
-  - **Переход на Go:** Разработка высокоскоростного нативного кроссплатформенного клиента **[BobrDobr](https://github.com/Phoenix1302/BobrDobr)** (AmneziaWG, WireGuard, OpenConnect).
-  - **Серверная маскировка:** Развертывание защищенных серверов с технологией Anti-Probing (`ocserv-camouflage`).
-  - **Автоматизация инфраструктуры:** Управление кластерами туннелей через Rootless **Podman Quadlets** и панель `bobrdobr_vpn-panel`.
+- **`2026` • BobrDobr Ecosystem & Stealth Infrastructure**
+  - **Transition to Go:** Developing **[BobrDobr](https://github.com/Phoenix1302/BobrDobr)** — a high-throughput native GUI client supporting AmneziaWG, WireGuard, and OpenConnect.
+  - **Server-Side Hardening:** Deploying obfuscated gateways with active anti-probing camouflage (`ocserv-camouflage`).
+  - **Infrastructure Automation:** Orchestrating ephemeral tunnel nodes via Rootless **Podman Quadlets** and `bobrdobr_vpn-panel`.
 
 ---
 
