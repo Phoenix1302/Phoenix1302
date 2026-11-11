@@ -1,51 +1,41 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="100%" height="240">
   <defs>
-    <!-- RADIAL GRADIENT VIGNETTE -->
-    <radialGradient id="vignette" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#080c14" stop-opacity="0.82" />
-      <stop offset="60%" stop-color="#05080e" stop-opacity="0.92" />
-      <stop offset="100%" stop-color="#020408" stop-opacity="0.98" />
-    </radialGradient>
-
-    <!-- CENTER GLOW FILTER -->
-    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3.5" result="blur1" />
-      <feGaussianBlur stdDeviation="8" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <!-- MATRIX RAIN GRADIENT FOR FADING TAILS -->
-    <linearGradient id="rainFade" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00ff66" stop-opacity="0" />
-      <stop offset="30%" stop-color="#00aa33" stop-opacity="0.4" />
-      <stop offset="70%" stop-color="#00ff66" stop-opacity="0.85" />
+    <!-- MATRIX RAIN VIVID PHOSPHOR GRADIENT -->
+    <linearGradient id="rainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#003311" stop-opacity="0.15" />
+      <stop offset="35%" stop-color="#00aa33" stop-opacity="0.85" />
+      <stop offset="75%" stop-color="#00ff41" stop-opacity="1" />
+      <stop offset="92%" stop-color="#70ff99" stop-opacity="1" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
     </linearGradient>
+
+    <!-- CENTER HUD BACKDROP -->
+    <radialGradient id="hudGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#030812" stop-opacity="0.94" />
+      <stop offset="80%" stop-color="#03070f" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#02040a" stop-opacity="0.88" />
+    </radialGradient>
   </defs>
 
   <style>
     @keyframes matrixFall {
-      0% { transform: translateY(-320px); }
-      100% { transform: translateY(320px); }
+      0% { transform: translateY(-340px); }
+      100% { transform: translateY(340px); }
     }
 
     @keyframes rgbNeonCycle {
-      0%   { fill: #00ff9d; stroke: #00ff9d; filter: drop-shadow(0 0 12px rgba(0, 255, 157, 0.9)); }
-      16%  { fill: #00e5ff; stroke: #00e5ff; filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.9)); }
-      33%  { fill: #3b82f6; stroke: #3b82f6; filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.9)); }
-      50%  { fill: #b026ff; stroke: #b026ff; filter: drop-shadow(0 0 12px rgba(176, 38, 255, 0.9)); }
-      66%  { fill: #ff007f; stroke: #ff007f; filter: drop-shadow(0 0 12px rgba(255, 0, 127, 0.9)); }
-      83%  { fill: #ff9100; stroke: #ff9100; filter: drop-shadow(0 0 12px rgba(255, 145, 0, 0.9)); }
-      100% { fill: #00ff9d; stroke: #00ff9d; filter: drop-shadow(0 0 12px rgba(0, 255, 157, 0.9)); }
+      0%   { fill: #00ff9d; stroke: #00ff9d; filter: drop-shadow(0 0 14px rgba(0, 255, 157, 0.95)) drop-shadow(0 0 30px rgba(0, 255, 157, 0.6)); }
+      16%  { fill: #00e5ff; stroke: #00e5ff; filter: drop-shadow(0 0 14px rgba(0, 229, 255, 0.95)) drop-shadow(0 0 30px rgba(0, 229, 255, 0.6)); }
+      33%  { fill: #3b82f6; stroke: #3b82f6; filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.95)) drop-shadow(0 0 30px rgba(59, 130, 246, 0.6)); }
+      50%  { fill: #b026ff; stroke: #b026ff; filter: drop-shadow(0 0 14px rgba(176, 38, 255, 0.95)) drop-shadow(0 0 30px rgba(176, 38, 255, 0.6)); }
+      66%  { fill: #ff007f; stroke: #ff007f; filter: drop-shadow(0 0 14px rgba(255, 0, 127, 0.95)) drop-shadow(0 0 30px rgba(255, 0, 127, 0.6)); }
+      83%  { fill: #ff9100; stroke: #ff9100; filter: drop-shadow(0 0 14px rgba(255, 145, 0, 0.95)) drop-shadow(0 0 30px rgba(255, 145, 0, 0.6)); }
+      100% { fill: #00ff9d; stroke: #00ff9d; filter: drop-shadow(0 0 14px rgba(0, 255, 157, 0.95)) drop-shadow(0 0 30px rgba(0, 255, 157, 0.6)); }
     }
 
     @keyframes pulseSub {
-      0%, 100% { opacity: 0.85; }
-      50% { opacity: 0.45; }
+      0%, 100% { opacity: 0.95; }
+      50% { opacity: 0.55; }
     }
 
     @keyframes scanline {
@@ -55,14 +45,15 @@
 
     .matrix-col {
       animation: matrixFall infinite linear;
-      font-family: 'Courier New', monospace;
-      font-size: 13px;
-      font-weight: bold;
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 14px;
+      font-weight: 900;
+      filter: drop-shadow(0 0 3px rgba(0, 255, 65, 0.8));
     }
 
     .rgb-title {
       font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
-      font-size: 52px;
+      font-size: 54px;
       font-weight: 900;
       letter-spacing: 5px;
       animation: rgbNeonCycle 8s infinite linear;
@@ -74,7 +65,8 @@
       font-size: 13px;
       letter-spacing: 4px;
       fill: #00ff9d;
-      font-weight: 600;
+      font-weight: 700;
+      filter: drop-shadow(0 0 6px rgba(0, 255, 157, 0.7));
       animation: pulseSub 3s infinite ease-in-out;
     }
 
@@ -82,770 +74,932 @@
       fill: none;
       stroke: #00ff9d;
       stroke-width: 1.5;
-      stroke-opacity: 0.7;
+      stroke-opacity: 0.85;
+      filter: drop-shadow(0 0 4px rgba(0, 255, 157, 0.6));
     }
   </style>
 
-  <!-- SOLID BACKGROUND -->
-  <rect width="900" height="240" rx="10" fill="#03060a" />
+  <!-- PURE JET BLACK MATRIX BACKGROUND -->
+  <rect width="900" height="240" rx="10" fill="#010408" />
 
-  <!-- MATRIX RAIN LAYER -->
-  <g opacity="0.55">    <g class="matrix-col" style="animation-duration: 3.2s; animation-delay: -1.5s;">
-      <text x="15" y="0" fill="url(#rainFade)">
-        <tspan x="15" dy="0">A</tspan>
-        <tspan x="15" dy="15">6</tspan>
-        <tspan x="15" dy="15">0</tspan>
-        <tspan x="15" dy="15">ﾕ</tspan>
-        <tspan x="15" dy="15">ﾐ</tspan>
-        <tspan x="15" dy="15">ﾗ</tspan>
-        <tspan x="15" dy="15">ﾗ</tspan>
-        <tspan x="15" dy="15">A</tspan>
-        <tspan x="15" dy="15">ｳ</tspan>
-        <tspan x="15" dy="15">F</tspan>
-        <tspan x="15" dy="15">F</tspan>
-        <tspan x="15" dy="15">E</tspan>
-        <tspan x="15" dy="15">ﾊ</tspan>
-        <tspan x="15" dy="15">2</tspan>
-        <tspan x="15" dy="15">ﾐ</tspan>
-        <tspan x="15" dy="15">0</tspan>
-        <tspan x="15" dy="15">ﾒ</tspan>
-        <tspan x="15" dy="15">ﾕ</tspan>
-        <tspan x="15" dy="15">ﾒ</tspan>
-        <tspan x="15" dy="15">0</tspan>
+  <!-- HIGH-CONTRAST MATRIX DIGITAL RAIN LAYER -->
+  <g opacity="0.95">    <g class="matrix-col" style="animation-duration: 2.6s; animation-delay: -1.1s;">
+      <text x="12" y="0" fill="url(#rainGrad)">
+        <tspan x="12" dy="0">ﾆ</tspan>
+        <tspan x="12" dy="15">7</tspan>
+        <tspan x="12" dy="15">6</tspan>
+        <tspan x="12" dy="15">ｼ</tspan>
+        <tspan x="12" dy="15">9</tspan>
+        <tspan x="12" dy="15">E</tspan>
+        <tspan x="12" dy="15">ﾊ</tspan>
+        <tspan x="12" dy="15">ｼ</tspan>
+        <tspan x="12" dy="15">9</tspan>
+        <tspan x="12" dy="15">ﾎ</tspan>
+        <tspan x="12" dy="15">C</tspan>
+        <tspan x="12" dy="15">E</tspan>
+        <tspan x="12" dy="15">ｻ</tspan>
+        <tspan x="12" dy="15">1</tspan>
+        <tspan x="12" dy="15">ｳ</tspan>
+        <tspan x="12" dy="15">E</tspan>
+        <tspan x="12" dy="15">ｼ</tspan>
+        <tspan x="12" dy="15">1</tspan>
+        <tspan x="12" dy="15">ﾑ</tspan>
+        <tspan x="12" dy="15">ｿ</tspan>
+        <tspan x="12" dy="15">ｴ</tspan>
+        <tspan x="12" dy="15">8</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.5s; animation-delay: -3.2s;">
-      <text x="45" y="0" fill="url(#rainFade)">
-        <tspan x="45" dy="0">ｷ</tspan>
-        <tspan x="45" dy="15">ﾑ</tspan>
-        <tspan x="45" dy="15">ﾗ</tspan>
-        <tspan x="45" dy="15">5</tspan>
-        <tspan x="45" dy="15">ﾈ</tspan>
-        <tspan x="45" dy="15">ｷ</tspan>
-        <tspan x="45" dy="15">ｵ</tspan>
-        <tspan x="45" dy="15">5</tspan>
-        <tspan x="45" dy="15">ﾐ</tspan>
-        <tspan x="45" dy="15">ﾑ</tspan>
-        <tspan x="45" dy="15">ﾋ</tspan>
-        <tspan x="45" dy="15">ﾀ</tspan>
-        <tspan x="45" dy="15">ﾕ</tspan>
-        <tspan x="45" dy="15">ｺ</tspan>
-        <tspan x="45" dy="15">ｹ</tspan>
-        <tspan x="45" dy="15">ﾆ</tspan>
-        <tspan x="45" dy="15">ｻ</tspan>
-        <tspan x="45" dy="15">ｼ</tspan>
-        <tspan x="45" dy="15">F</tspan>
-        <tspan x="45" dy="15">5</tspan>
+    <g class="matrix-col" style="animation-duration: 3.8s; animation-delay: -2.7s;">
+      <text x="38" y="0" fill="url(#rainGrad)">
+        <tspan x="38" dy="0">4</tspan>
+        <tspan x="38" dy="15">ﾈ</tspan>
+        <tspan x="38" dy="15">ﾑ</tspan>
+        <tspan x="38" dy="15">ｽ</tspan>
+        <tspan x="38" dy="15">2</tspan>
+        <tspan x="38" dy="15">ﾊ</tspan>
+        <tspan x="38" dy="15">8</tspan>
+        <tspan x="38" dy="15">ﾗ</tspan>
+        <tspan x="38" dy="15">ﾈ</tspan>
+        <tspan x="38" dy="15">ｼ</tspan>
+        <tspan x="38" dy="15">A</tspan>
+        <tspan x="38" dy="15">2</tspan>
+        <tspan x="38" dy="15">0</tspan>
+        <tspan x="38" dy="15">ﾀ</tspan>
+        <tspan x="38" dy="15">ﾒ</tspan>
+        <tspan x="38" dy="15">0</tspan>
+        <tspan x="38" dy="15">ｽ</tspan>
+        <tspan x="38" dy="15">ﾑ</tspan>
+        <tspan x="38" dy="15">ﾎ</tspan>
+        <tspan x="38" dy="15">ｴ</tspan>
+        <tspan x="38" dy="15">8</tspan>
+        <tspan x="38" dy="15">1</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 2.8s; animation-delay: -0.8s;">
-      <text x="75" y="0" fill="url(#rainFade)">
-        <tspan x="75" dy="0">ﾔ</tspan>
-        <tspan x="75" dy="15">8</tspan>
-        <tspan x="75" dy="15">4</tspan>
-        <tspan x="75" dy="15">ｽ</tspan>
-        <tspan x="75" dy="15">ﾏ</tspan>
-        <tspan x="75" dy="15">A</tspan>
-        <tspan x="75" dy="15">B</tspan>
-        <tspan x="75" dy="15">ｳ</tspan>
-        <tspan x="75" dy="15">ﾊ</tspan>
-        <tspan x="75" dy="15">ﾕ</tspan>
-        <tspan x="75" dy="15">ﾈ</tspan>
-        <tspan x="75" dy="15">F</tspan>
-        <tspan x="75" dy="15">F</tspan>
-        <tspan x="75" dy="15">ﾒ</tspan>
-        <tspan x="75" dy="15">ﾓ</tspan>
-        <tspan x="75" dy="15">1</tspan>
-        <tspan x="75" dy="15">8</tspan>
-        <tspan x="75" dy="15">A</tspan>
-        <tspan x="75" dy="15">A</tspan>
-        <tspan x="75" dy="15">ｱ</tspan>
+    <g class="matrix-col" style="animation-duration: 2.2s; animation-delay: -0.6s;">
+      <text x="64" y="0" fill="url(#rainGrad)">
+        <tspan x="64" dy="0">2</tspan>
+        <tspan x="64" dy="15">ﾏ</tspan>
+        <tspan x="64" dy="15">ﾃ</tspan>
+        <tspan x="64" dy="15">6</tspan>
+        <tspan x="64" dy="15">D</tspan>
+        <tspan x="64" dy="15">ﾏ</tspan>
+        <tspan x="64" dy="15">F</tspan>
+        <tspan x="64" dy="15">ﾅ</tspan>
+        <tspan x="64" dy="15">7</tspan>
+        <tspan x="64" dy="15">2</tspan>
+        <tspan x="64" dy="15">ﾂ</tspan>
+        <tspan x="64" dy="15">ｼ</tspan>
+        <tspan x="64" dy="15">2</tspan>
+        <tspan x="64" dy="15">ｶ</tspan>
+        <tspan x="64" dy="15">ﾈ</tspan>
+        <tspan x="64" dy="15">ﾃ</tspan>
+        <tspan x="64" dy="15">C</tspan>
+        <tspan x="64" dy="15">0</tspan>
+        <tspan x="64" dy="15">ｳ</tspan>
+        <tspan x="64" dy="15">E</tspan>
+        <tspan x="64" dy="15">3</tspan>
+        <tspan x="64" dy="15">ﾊ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 5.1s; animation-delay: -4.1s;">
-      <text x="105" y="0" fill="url(#rainFade)">
-        <tspan x="105" dy="0">ｻ</tspan>
-        <tspan x="105" dy="15">ﾑ</tspan>
-        <tspan x="105" dy="15">ｦ</tspan>
-        <tspan x="105" dy="15">ｼ</tspan>
-        <tspan x="105" dy="15">ｺ</tspan>
-        <tspan x="105" dy="15">ﾃ</tspan>
-        <tspan x="105" dy="15">1</tspan>
-        <tspan x="105" dy="15">C</tspan>
-        <tspan x="105" dy="15">ｼ</tspan>
-        <tspan x="105" dy="15">7</tspan>
-        <tspan x="105" dy="15">ｹ</tspan>
-        <tspan x="105" dy="15">1</tspan>
-        <tspan x="105" dy="15">ﾀ</tspan>
-        <tspan x="105" dy="15">ﾊ</tspan>
-        <tspan x="105" dy="15">4</tspan>
-        <tspan x="105" dy="15">F</tspan>
-        <tspan x="105" dy="15">ﾋ</tspan>
-        <tspan x="105" dy="15">ｱ</tspan>
-        <tspan x="105" dy="15">E</tspan>
-        <tspan x="105" dy="15">ｻ</tspan>
+    <g class="matrix-col" style="animation-duration: 4.2s; animation-delay: -3.4s;">
+      <text x="90" y="0" fill="url(#rainGrad)">
+        <tspan x="90" dy="0">3</tspan>
+        <tspan x="90" dy="15">ｹ</tspan>
+        <tspan x="90" dy="15">0</tspan>
+        <tspan x="90" dy="15">ﾐ</tspan>
+        <tspan x="90" dy="15">ｷ</tspan>
+        <tspan x="90" dy="15">ｼ</tspan>
+        <tspan x="90" dy="15">ｻ</tspan>
+        <tspan x="90" dy="15">0</tspan>
+        <tspan x="90" dy="15">ﾒ</tspan>
+        <tspan x="90" dy="15">0</tspan>
+        <tspan x="90" dy="15">0</tspan>
+        <tspan x="90" dy="15">3</tspan>
+        <tspan x="90" dy="15">ﾅ</tspan>
+        <tspan x="90" dy="15">1</tspan>
+        <tspan x="90" dy="15">ﾘ</tspan>
+        <tspan x="90" dy="15">ﾜ</tspan>
+        <tspan x="90" dy="15">ｹ</tspan>
+        <tspan x="90" dy="15">ｳ</tspan>
+        <tspan x="90" dy="15">ﾂ</tspan>
+        <tspan x="90" dy="15">2</tspan>
+        <tspan x="90" dy="15">ｳ</tspan>
+        <tspan x="90" dy="15">7</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.8s; animation-delay: -2s;">
-      <text x="135" y="0" fill="url(#rainFade)">
-        <tspan x="135" dy="0">C</tspan>
-        <tspan x="135" dy="15">1</tspan>
-        <tspan x="135" dy="15">1</tspan>
-        <tspan x="135" dy="15">ﾔ</tspan>
-        <tspan x="135" dy="15">5</tspan>
-        <tspan x="135" dy="15">ｷ</tspan>
-        <tspan x="135" dy="15">1</tspan>
-        <tspan x="135" dy="15">3</tspan>
-        <tspan x="135" dy="15">ｿ</tspan>
-        <tspan x="135" dy="15">7</tspan>
-        <tspan x="135" dy="15">ｼ</tspan>
-        <tspan x="135" dy="15">0</tspan>
-        <tspan x="135" dy="15">ｦ</tspan>
-        <tspan x="135" dy="15">ﾕ</tspan>
-        <tspan x="135" dy="15">ｾ</tspan>
-        <tspan x="135" dy="15">3</tspan>
-        <tspan x="135" dy="15">ﾏ</tspan>
-        <tspan x="135" dy="15">ｼ</tspan>
-        <tspan x="135" dy="15">2</tspan>
-        <tspan x="135" dy="15">7</tspan>
+    <g class="matrix-col" style="animation-duration: 3.1s; animation-delay: -1.8s;">
+      <text x="116" y="0" fill="url(#rainGrad)">
+        <tspan x="116" dy="0">ｷ</tspan>
+        <tspan x="116" dy="15">ﾐ</tspan>
+        <tspan x="116" dy="15">ｽ</tspan>
+        <tspan x="116" dy="15">ｵ</tspan>
+        <tspan x="116" dy="15">0</tspan>
+        <tspan x="116" dy="15">ﾗ</tspan>
+        <tspan x="116" dy="15">ﾀ</tspan>
+        <tspan x="116" dy="15">ﾋ</tspan>
+        <tspan x="116" dy="15">1</tspan>
+        <tspan x="116" dy="15">ﾕ</tspan>
+        <tspan x="116" dy="15">X</tspan>
+        <tspan x="116" dy="15">ｦ</tspan>
+        <tspan x="116" dy="15">ﾊ</tspan>
+        <tspan x="116" dy="15">8</tspan>
+        <tspan x="116" dy="15">5</tspan>
+        <tspan x="116" dy="15">ｷ</tspan>
+        <tspan x="116" dy="15">ｦ</tspan>
+        <tspan x="116" dy="15">ﾏ</tspan>
+        <tspan x="116" dy="15">8</tspan>
+        <tspan x="116" dy="15">7</tspan>
+        <tspan x="116" dy="15">B</tspan>
+        <tspan x="116" dy="15">ﾀ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.2s; animation-delay: -3.5s;">
-      <text x="165" y="0" fill="url(#rainFade)">
-        <tspan x="165" dy="0">ﾑ</tspan>
-        <tspan x="165" dy="15">ﾘ</tspan>
-        <tspan x="165" dy="15">ﾑ</tspan>
-        <tspan x="165" dy="15">ﾀ</tspan>
-        <tspan x="165" dy="15">ｶ</tspan>
-        <tspan x="165" dy="15">ｴ</tspan>
-        <tspan x="165" dy="15">ﾅ</tspan>
-        <tspan x="165" dy="15">ｻ</tspan>
-        <tspan x="165" dy="15">ﾋ</tspan>
-        <tspan x="165" dy="15">ｿ</tspan>
-        <tspan x="165" dy="15">ｽ</tspan>
-        <tspan x="165" dy="15">ﾎ</tspan>
-        <tspan x="165" dy="15">ﾔ</tspan>
-        <tspan x="165" dy="15">ﾅ</tspan>
-        <tspan x="165" dy="15">6</tspan>
-        <tspan x="165" dy="15">ｹ</tspan>
-        <tspan x="165" dy="15">ｺ</tspan>
-        <tspan x="165" dy="15">ｵ</tspan>
-        <tspan x="165" dy="15">ｵ</tspan>
-        <tspan x="165" dy="15">2</tspan>
+    <g class="matrix-col" style="animation-duration: 3.5s; animation-delay: -2.9s;">
+      <text x="142" y="0" fill="url(#rainGrad)">
+        <tspan x="142" dy="0">ｼ</tspan>
+        <tspan x="142" dy="15">Z</tspan>
+        <tspan x="142" dy="15">ﾏ</tspan>
+        <tspan x="142" dy="15">ﾆ</tspan>
+        <tspan x="142" dy="15">ﾊ</tspan>
+        <tspan x="142" dy="15">F</tspan>
+        <tspan x="142" dy="15">ｾ</tspan>
+        <tspan x="142" dy="15">Z</tspan>
+        <tspan x="142" dy="15">ﾅ</tspan>
+        <tspan x="142" dy="15">1</tspan>
+        <tspan x="142" dy="15">ｦ</tspan>
+        <tspan x="142" dy="15">ﾜ</tspan>
+        <tspan x="142" dy="15">1</tspan>
+        <tspan x="142" dy="15">C</tspan>
+        <tspan x="142" dy="15">E</tspan>
+        <tspan x="142" dy="15">2</tspan>
+        <tspan x="142" dy="15">B</tspan>
+        <tspan x="142" dy="15">ﾀ</tspan>
+        <tspan x="142" dy="15">ｶ</tspan>
+        <tspan x="142" dy="15">5</tspan>
+        <tspan x="142" dy="15">Z</tspan>
+        <tspan x="142" dy="15">6</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 2.5s; animation-delay: -1.1s;">
-      <text x="195" y="0" fill="url(#rainFade)">
-        <tspan x="195" dy="0">1</tspan>
-        <tspan x="195" dy="15">E</tspan>
-        <tspan x="195" dy="15">ﾂ</tspan>
-        <tspan x="195" dy="15">ｴ</tspan>
-        <tspan x="195" dy="15">ｿ</tspan>
-        <tspan x="195" dy="15">8</tspan>
-        <tspan x="195" dy="15">ﾜ</tspan>
-        <tspan x="195" dy="15">ﾆ</tspan>
-        <tspan x="195" dy="15">8</tspan>
-        <tspan x="195" dy="15">1</tspan>
-        <tspan x="195" dy="15">ｹ</tspan>
-        <tspan x="195" dy="15">C</tspan>
-        <tspan x="195" dy="15">0</tspan>
-        <tspan x="195" dy="15">7</tspan>
-        <tspan x="195" dy="15">ﾃ</tspan>
-        <tspan x="195" dy="15">E</tspan>
-        <tspan x="195" dy="15">9</tspan>
-        <tspan x="195" dy="15">ﾇ</tspan>
-        <tspan x="195" dy="15">ｶ</tspan>
-        <tspan x="195" dy="15">ﾆ</tspan>
+    <g class="matrix-col" style="animation-duration: 2.1s; animation-delay: -0.9s;">
+      <text x="168" y="0" fill="url(#rainGrad)">
+        <tspan x="168" dy="0">5</tspan>
+        <tspan x="168" dy="15">1</tspan>
+        <tspan x="168" dy="15">1</tspan>
+        <tspan x="168" dy="15">ﾎ</tspan>
+        <tspan x="168" dy="15">ﾒ</tspan>
+        <tspan x="168" dy="15">0</tspan>
+        <tspan x="168" dy="15">2</tspan>
+        <tspan x="168" dy="15">ﾓ</tspan>
+        <tspan x="168" dy="15">ﾗ</tspan>
+        <tspan x="168" dy="15">D</tspan>
+        <tspan x="168" dy="15">ﾘ</tspan>
+        <tspan x="168" dy="15">ﾓ</tspan>
+        <tspan x="168" dy="15">F</tspan>
+        <tspan x="168" dy="15">ｽ</tspan>
+        <tspan x="168" dy="15">ﾃ</tspan>
+        <tspan x="168" dy="15">ﾃ</tspan>
+        <tspan x="168" dy="15">A</tspan>
+        <tspan x="168" dy="15">0</tspan>
+        <tspan x="168" dy="15">A</tspan>
+        <tspan x="168" dy="15">1</tspan>
+        <tspan x="168" dy="15">C</tspan>
+        <tspan x="168" dy="15">ﾜ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.9s; animation-delay: -4.6s;">
-      <text x="225" y="0" fill="url(#rainFade)">
-        <tspan x="225" dy="0">ﾎ</tspan>
-        <tspan x="225" dy="15">ﾎ</tspan>
-        <tspan x="225" dy="15">E</tspan>
-        <tspan x="225" dy="15">0</tspan>
-        <tspan x="225" dy="15">ｾ</tspan>
-        <tspan x="225" dy="15">ﾊ</tspan>
-        <tspan x="225" dy="15">ｴ</tspan>
-        <tspan x="225" dy="15">ﾃ</tspan>
-        <tspan x="225" dy="15">ﾎ</tspan>
-        <tspan x="225" dy="15">5</tspan>
-        <tspan x="225" dy="15">ｼ</tspan>
-        <tspan x="225" dy="15">ｱ</tspan>
-        <tspan x="225" dy="15">5</tspan>
-        <tspan x="225" dy="15">0</tspan>
-        <tspan x="225" dy="15">ﾏ</tspan>
-        <tspan x="225" dy="15">ｾ</tspan>
-        <tspan x="225" dy="15">0</tspan>
-        <tspan x="225" dy="15">ｵ</tspan>
-        <tspan x="225" dy="15">1</tspan>
-        <tspan x="225" dy="15">F</tspan>
+    <g class="matrix-col" style="animation-duration: 4s; animation-delay: -3.8s;">
+      <text x="194" y="0" fill="url(#rainGrad)">
+        <tspan x="194" dy="0">Z</tspan>
+        <tspan x="194" dy="15">ﾏ</tspan>
+        <tspan x="194" dy="15">7</tspan>
+        <tspan x="194" dy="15">ﾕ</tspan>
+        <tspan x="194" dy="15">A</tspan>
+        <tspan x="194" dy="15">0</tspan>
+        <tspan x="194" dy="15">ｾ</tspan>
+        <tspan x="194" dy="15">ｾ</tspan>
+        <tspan x="194" dy="15">ﾊ</tspan>
+        <tspan x="194" dy="15">6</tspan>
+        <tspan x="194" dy="15">ﾀ</tspan>
+        <tspan x="194" dy="15">ｴ</tspan>
+        <tspan x="194" dy="15">ﾕ</tspan>
+        <tspan x="194" dy="15">ｷ</tspan>
+        <tspan x="194" dy="15">ｱ</tspan>
+        <tspan x="194" dy="15">Y</tspan>
+        <tspan x="194" dy="15">ｹ</tspan>
+        <tspan x="194" dy="15">ｽ</tspan>
+        <tspan x="194" dy="15">X</tspan>
+        <tspan x="194" dy="15">ﾑ</tspan>
+        <tspan x="194" dy="15">7</tspan>
+        <tspan x="194" dy="15">5</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.4s; animation-delay: -2.4s;">
-      <text x="255" y="0" fill="url(#rainFade)">
-        <tspan x="255" dy="0">ｴ</tspan>
-        <tspan x="255" dy="15">ﾘ</tspan>
-        <tspan x="255" dy="15">ｦ</tspan>
-        <tspan x="255" dy="15">ﾈ</tspan>
-        <tspan x="255" dy="15">6</tspan>
-        <tspan x="255" dy="15">0</tspan>
-        <tspan x="255" dy="15">ｷ</tspan>
-        <tspan x="255" dy="15">ﾋ</tspan>
-        <tspan x="255" dy="15">0</tspan>
-        <tspan x="255" dy="15">ﾑ</tspan>
-        <tspan x="255" dy="15">F</tspan>
-        <tspan x="255" dy="15">ﾎ</tspan>
-        <tspan x="255" dy="15">ﾘ</tspan>
-        <tspan x="255" dy="15">ﾈ</tspan>
-        <tspan x="255" dy="15">C</tspan>
-        <tspan x="255" dy="15">ｼ</tspan>
-        <tspan x="255" dy="15">ﾜ</tspan>
-        <tspan x="255" dy="15">ﾂ</tspan>
-        <tspan x="255" dy="15">ﾏ</tspan>
-        <tspan x="255" dy="15">ﾑ</tspan>
+    <g class="matrix-col" style="animation-duration: 2.8s; animation-delay: -2s;">
+      <text x="220" y="0" fill="url(#rainGrad)">
+        <tspan x="220" dy="0">0</tspan>
+        <tspan x="220" dy="15">A</tspan>
+        <tspan x="220" dy="15">ﾜ</tspan>
+        <tspan x="220" dy="15">ﾊ</tspan>
+        <tspan x="220" dy="15">ｵ</tspan>
+        <tspan x="220" dy="15">ﾀ</tspan>
+        <tspan x="220" dy="15">ｵ</tspan>
+        <tspan x="220" dy="15">6</tspan>
+        <tspan x="220" dy="15">ﾘ</tspan>
+        <tspan x="220" dy="15">Y</tspan>
+        <tspan x="220" dy="15">ﾕ</tspan>
+        <tspan x="220" dy="15">9</tspan>
+        <tspan x="220" dy="15">ｦ</tspan>
+        <tspan x="220" dy="15">ｽ</tspan>
+        <tspan x="220" dy="15">ﾂ</tspan>
+        <tspan x="220" dy="15">ﾜ</tspan>
+        <tspan x="220" dy="15">ﾒ</tspan>
+        <tspan x="220" dy="15">ﾎ</tspan>
+        <tspan x="220" dy="15">F</tspan>
+        <tspan x="220" dy="15">ｦ</tspan>
+        <tspan x="220" dy="15">ｼ</tspan>
+        <tspan x="220" dy="15">ﾑ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 5.5s; animation-delay: -0.5s;">
-      <text x="285" y="0" fill="url(#rainFade)">
-        <tspan x="285" dy="0">ﾈ</tspan>
-        <tspan x="285" dy="15">0</tspan>
-        <tspan x="285" dy="15">ﾔ</tspan>
-        <tspan x="285" dy="15">3</tspan>
-        <tspan x="285" dy="15">ｹ</tspan>
-        <tspan x="285" dy="15">5</tspan>
-        <tspan x="285" dy="15">7</tspan>
-        <tspan x="285" dy="15">F</tspan>
-        <tspan x="285" dy="15">0</tspan>
-        <tspan x="285" dy="15">3</tspan>
-        <tspan x="285" dy="15">ﾗ</tspan>
-        <tspan x="285" dy="15">ﾊ</tspan>
-        <tspan x="285" dy="15">ﾅ</tspan>
-        <tspan x="285" dy="15">8</tspan>
-        <tspan x="285" dy="15">E</tspan>
-        <tspan x="285" dy="15">ﾏ</tspan>
-        <tspan x="285" dy="15">ｵ</tspan>
-        <tspan x="285" dy="15">ｼ</tspan>
-        <tspan x="285" dy="15">ﾒ</tspan>
-        <tspan x="285" dy="15">E</tspan>
+    <g class="matrix-col" style="animation-duration: 4.5s; animation-delay: -0.4s;">
+      <text x="246" y="0" fill="url(#rainGrad)">
+        <tspan x="246" dy="0">D</tspan>
+        <tspan x="246" dy="15">ﾕ</tspan>
+        <tspan x="246" dy="15">ﾆ</tspan>
+        <tspan x="246" dy="15">A</tspan>
+        <tspan x="246" dy="15">F</tspan>
+        <tspan x="246" dy="15">C</tspan>
+        <tspan x="246" dy="15">ﾒ</tspan>
+        <tspan x="246" dy="15">ﾅ</tspan>
+        <tspan x="246" dy="15">4</tspan>
+        <tspan x="246" dy="15">ｶ</tspan>
+        <tspan x="246" dy="15">ﾑ</tspan>
+        <tspan x="246" dy="15">ﾕ</tspan>
+        <tspan x="246" dy="15">ﾏ</tspan>
+        <tspan x="246" dy="15">X</tspan>
+        <tspan x="246" dy="15">ﾜ</tspan>
+        <tspan x="246" dy="15">ｹ</tspan>
+        <tspan x="246" dy="15">ﾕ</tspan>
+        <tspan x="246" dy="15">Y</tspan>
+        <tspan x="246" dy="15">8</tspan>
+        <tspan x="246" dy="15">ﾀ</tspan>
+        <tspan x="246" dy="15">B</tspan>
+        <tspan x="246" dy="15">ﾃ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3s; animation-delay: -3.8s;">
-      <text x="315" y="0" fill="url(#rainFade)">
-        <tspan x="315" dy="0">E</tspan>
-        <tspan x="315" dy="15">ﾀ</tspan>
-        <tspan x="315" dy="15">ﾃ</tspan>
-        <tspan x="315" dy="15">ﾗ</tspan>
-        <tspan x="315" dy="15">ﾏ</tspan>
-        <tspan x="315" dy="15">ﾈ</tspan>
-        <tspan x="315" dy="15">ｳ</tspan>
-        <tspan x="315" dy="15">ｱ</tspan>
-        <tspan x="315" dy="15">ﾊ</tspan>
-        <tspan x="315" dy="15">E</tspan>
-        <tspan x="315" dy="15">ｾ</tspan>
-        <tspan x="315" dy="15">ﾅ</tspan>
-        <tspan x="315" dy="15">ﾀ</tspan>
-        <tspan x="315" dy="15">9</tspan>
-        <tspan x="315" dy="15">ｼ</tspan>
-        <tspan x="315" dy="15">5</tspan>
-        <tspan x="315" dy="15">3</tspan>
-        <tspan x="315" dy="15">F</tspan>
-        <tspan x="315" dy="15">D</tspan>
-        <tspan x="315" dy="15">0</tspan>
+    <g class="matrix-col" style="animation-duration: 2.5s; animation-delay: -3.1s;">
+      <text x="272" y="0" fill="url(#rainGrad)">
+        <tspan x="272" dy="0">ｻ</tspan>
+        <tspan x="272" dy="15">ﾈ</tspan>
+        <tspan x="272" dy="15">6</tspan>
+        <tspan x="272" dy="15">ﾑ</tspan>
+        <tspan x="272" dy="15">ｱ</tspan>
+        <tspan x="272" dy="15">ｼ</tspan>
+        <tspan x="272" dy="15">ﾊ</tspan>
+        <tspan x="272" dy="15">B</tspan>
+        <tspan x="272" dy="15">ｽ</tspan>
+        <tspan x="272" dy="15">ﾐ</tspan>
+        <tspan x="272" dy="15">ｿ</tspan>
+        <tspan x="272" dy="15">A</tspan>
+        <tspan x="272" dy="15">ﾜ</tspan>
+        <tspan x="272" dy="15">2</tspan>
+        <tspan x="272" dy="15">3</tspan>
+        <tspan x="272" dy="15">B</tspan>
+        <tspan x="272" dy="15">1</tspan>
+        <tspan x="272" dy="15">9</tspan>
+        <tspan x="272" dy="15">0</tspan>
+        <tspan x="272" dy="15">E</tspan>
+        <tspan x="272" dy="15">ﾕ</tspan>
+        <tspan x="272" dy="15">ｹ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.7s; animation-delay: -1.9s;">
-      <text x="345" y="0" fill="url(#rainFade)">
-        <tspan x="345" dy="0">9</tspan>
-        <tspan x="345" dy="15">8</tspan>
-        <tspan x="345" dy="15">ｶ</tspan>
-        <tspan x="345" dy="15">ﾗ</tspan>
-        <tspan x="345" dy="15">ﾓ</tspan>
-        <tspan x="345" dy="15">ｼ</tspan>
-        <tspan x="345" dy="15">5</tspan>
-        <tspan x="345" dy="15">ﾏ</tspan>
-        <tspan x="345" dy="15">ｶ</tspan>
-        <tspan x="345" dy="15">ｵ</tspan>
-        <tspan x="345" dy="15">5</tspan>
-        <tspan x="345" dy="15">ｶ</tspan>
-        <tspan x="345" dy="15">ﾊ</tspan>
-        <tspan x="345" dy="15">ｼ</tspan>
-        <tspan x="345" dy="15">ｽ</tspan>
-        <tspan x="345" dy="15">6</tspan>
-        <tspan x="345" dy="15">ﾃ</tspan>
-        <tspan x="345" dy="15">ﾗ</tspan>
-        <tspan x="345" dy="15">C</tspan>
-        <tspan x="345" dy="15">ﾈ</tspan>
+    <g class="matrix-col" style="animation-duration: 3.9s; animation-delay: -1.6s;">
+      <text x="298" y="0" fill="url(#rainGrad)">
+        <tspan x="298" dy="0">ｳ</tspan>
+        <tspan x="298" dy="15">ｷ</tspan>
+        <tspan x="298" dy="15">ﾎ</tspan>
+        <tspan x="298" dy="15">ﾆ</tspan>
+        <tspan x="298" dy="15">Z</tspan>
+        <tspan x="298" dy="15">ｱ</tspan>
+        <tspan x="298" dy="15">ﾔ</tspan>
+        <tspan x="298" dy="15">1</tspan>
+        <tspan x="298" dy="15">A</tspan>
+        <tspan x="298" dy="15">ﾜ</tspan>
+        <tspan x="298" dy="15">ﾀ</tspan>
+        <tspan x="298" dy="15">ﾂ</tspan>
+        <tspan x="298" dy="15">ｴ</tspan>
+        <tspan x="298" dy="15">X</tspan>
+        <tspan x="298" dy="15">4</tspan>
+        <tspan x="298" dy="15">ｹ</tspan>
+        <tspan x="298" dy="15">ﾕ</tspan>
+        <tspan x="298" dy="15">1</tspan>
+        <tspan x="298" dy="15">ﾘ</tspan>
+        <tspan x="298" dy="15">ﾕ</tspan>
+        <tspan x="298" dy="15">ﾕ</tspan>
+        <tspan x="298" dy="15">0</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 2.9s; animation-delay: -4.3s;">
-      <text x="375" y="0" fill="url(#rainFade)">
-        <tspan x="375" dy="0">ﾆ</tspan>
-        <tspan x="375" dy="15">ﾋ</tspan>
-        <tspan x="375" dy="15">ｼ</tspan>
-        <tspan x="375" dy="15">2</tspan>
-        <tspan x="375" dy="15">ｷ</tspan>
-        <tspan x="375" dy="15">E</tspan>
-        <tspan x="375" dy="15">6</tspan>
-        <tspan x="375" dy="15">ｺ</tspan>
-        <tspan x="375" dy="15">ﾀ</tspan>
-        <tspan x="375" dy="15">9</tspan>
-        <tspan x="375" dy="15">ﾈ</tspan>
-        <tspan x="375" dy="15">7</tspan>
-        <tspan x="375" dy="15">E</tspan>
-        <tspan x="375" dy="15">ﾒ</tspan>
-        <tspan x="375" dy="15">4</tspan>
-        <tspan x="375" dy="15">6</tspan>
-        <tspan x="375" dy="15">8</tspan>
-        <tspan x="375" dy="15">ﾇ</tspan>
-        <tspan x="375" dy="15">2</tspan>
-        <tspan x="375" dy="15">E</tspan>
+    <g class="matrix-col" style="animation-duration: 2.3s; animation-delay: -3.5s;">
+      <text x="324" y="0" fill="url(#rainGrad)">
+        <tspan x="324" dy="0">0</tspan>
+        <tspan x="324" dy="15">ｿ</tspan>
+        <tspan x="324" dy="15">1</tspan>
+        <tspan x="324" dy="15">ﾕ</tspan>
+        <tspan x="324" dy="15">ｵ</tspan>
+        <tspan x="324" dy="15">ﾇ</tspan>
+        <tspan x="324" dy="15">ﾆ</tspan>
+        <tspan x="324" dy="15">Z</tspan>
+        <tspan x="324" dy="15">0</tspan>
+        <tspan x="324" dy="15">ﾜ</tspan>
+        <tspan x="324" dy="15">ﾎ</tspan>
+        <tspan x="324" dy="15">1</tspan>
+        <tspan x="324" dy="15">ｦ</tspan>
+        <tspan x="324" dy="15">ﾆ</tspan>
+        <tspan x="324" dy="15">2</tspan>
+        <tspan x="324" dy="15">ﾇ</tspan>
+        <tspan x="324" dy="15">ｼ</tspan>
+        <tspan x="324" dy="15">ｳ</tspan>
+        <tspan x="324" dy="15">ｦ</tspan>
+        <tspan x="324" dy="15">C</tspan>
+        <tspan x="324" dy="15">ﾂ</tspan>
+        <tspan x="324" dy="15">ﾅ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.9s; animation-delay: -2.7s;">
-      <text x="405" y="0" fill="url(#rainFade)">
-        <tspan x="405" dy="0">ﾂ</tspan>
-        <tspan x="405" dy="15">ｾ</tspan>
-        <tspan x="405" dy="15">ﾔ</tspan>
-        <tspan x="405" dy="15">1</tspan>
-        <tspan x="405" dy="15">8</tspan>
-        <tspan x="405" dy="15">7</tspan>
-        <tspan x="405" dy="15">ﾕ</tspan>
-        <tspan x="405" dy="15">3</tspan>
-        <tspan x="405" dy="15">ｿ</tspan>
-        <tspan x="405" dy="15">ｴ</tspan>
-        <tspan x="405" dy="15">ｵ</tspan>
-        <tspan x="405" dy="15">5</tspan>
-        <tspan x="405" dy="15">2</tspan>
-        <tspan x="405" dy="15">ｻ</tspan>
-        <tspan x="405" dy="15">0</tspan>
-        <tspan x="405" dy="15">ｴ</tspan>
-        <tspan x="405" dy="15">ﾀ</tspan>
-        <tspan x="405" dy="15">ｳ</tspan>
-        <tspan x="405" dy="15">ｷ</tspan>
-        <tspan x="405" dy="15">ﾀ</tspan>
+    <g class="matrix-col" style="animation-duration: 3.2s; animation-delay: -2.2s;">
+      <text x="350" y="0" fill="url(#rainGrad)">
+        <tspan x="350" dy="0">ﾂ</tspan>
+        <tspan x="350" dy="15">1</tspan>
+        <tspan x="350" dy="15">ﾆ</tspan>
+        <tspan x="350" dy="15">5</tspan>
+        <tspan x="350" dy="15">7</tspan>
+        <tspan x="350" dy="15">ﾓ</tspan>
+        <tspan x="350" dy="15">F</tspan>
+        <tspan x="350" dy="15">Y</tspan>
+        <tspan x="350" dy="15">ｱ</tspan>
+        <tspan x="350" dy="15">0</tspan>
+        <tspan x="350" dy="15">ｿ</tspan>
+        <tspan x="350" dy="15">ｱ</tspan>
+        <tspan x="350" dy="15">8</tspan>
+        <tspan x="350" dy="15">A</tspan>
+        <tspan x="350" dy="15">ﾅ</tspan>
+        <tspan x="350" dy="15">5</tspan>
+        <tspan x="350" dy="15">ﾜ</tspan>
+        <tspan x="350" dy="15">9</tspan>
+        <tspan x="350" dy="15">ﾆ</tspan>
+        <tspan x="350" dy="15">A</tspan>
+        <tspan x="350" dy="15">ﾅ</tspan>
+        <tspan x="350" dy="15">ﾅ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 5s; animation-delay: -0.9s;">
-      <text x="435" y="0" fill="url(#rainFade)">
-        <tspan x="435" dy="0">ｴ</tspan>
-        <tspan x="435" dy="15">ｾ</tspan>
-        <tspan x="435" dy="15">9</tspan>
-        <tspan x="435" dy="15">D</tspan>
-        <tspan x="435" dy="15">ﾅ</tspan>
-        <tspan x="435" dy="15">ﾘ</tspan>
-        <tspan x="435" dy="15">8</tspan>
-        <tspan x="435" dy="15">ﾓ</tspan>
-        <tspan x="435" dy="15">ｶ</tspan>
-        <tspan x="435" dy="15">ｶ</tspan>
-        <tspan x="435" dy="15">ﾗ</tspan>
-        <tspan x="435" dy="15">ﾗ</tspan>
-        <tspan x="435" dy="15">ﾔ</tspan>
-        <tspan x="435" dy="15">ﾘ</tspan>
-        <tspan x="435" dy="15">5</tspan>
-        <tspan x="435" dy="15">6</tspan>
-        <tspan x="435" dy="15">ﾑ</tspan>
-        <tspan x="435" dy="15">A</tspan>
-        <tspan x="435" dy="15">ﾓ</tspan>
-        <tspan x="435" dy="15">1</tspan>
+    <g class="matrix-col" style="animation-duration: 4.1s; animation-delay: -0.8s;">
+      <text x="376" y="0" fill="url(#rainGrad)">
+        <tspan x="376" dy="0">ﾔ</tspan>
+        <tspan x="376" dy="15">ｱ</tspan>
+        <tspan x="376" dy="15">ﾂ</tspan>
+        <tspan x="376" dy="15">ｶ</tspan>
+        <tspan x="376" dy="15">ｶ</tspan>
+        <tspan x="376" dy="15">A</tspan>
+        <tspan x="376" dy="15">ﾐ</tspan>
+        <tspan x="376" dy="15">ｾ</tspan>
+        <tspan x="376" dy="15">ｽ</tspan>
+        <tspan x="376" dy="15">ﾆ</tspan>
+        <tspan x="376" dy="15">ｵ</tspan>
+        <tspan x="376" dy="15">ﾆ</tspan>
+        <tspan x="376" dy="15">Y</tspan>
+        <tspan x="376" dy="15">ﾈ</tspan>
+        <tspan x="376" dy="15">C</tspan>
+        <tspan x="376" dy="15">1</tspan>
+        <tspan x="376" dy="15">ｽ</tspan>
+        <tspan x="376" dy="15">ﾑ</tspan>
+        <tspan x="376" dy="15">ﾈ</tspan>
+        <tspan x="376" dy="15">1</tspan>
+        <tspan x="376" dy="15">ﾀ</tspan>
+        <tspan x="376" dy="15">ﾎ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.1s; animation-delay: -3.1s;">
-      <text x="465" y="0" fill="url(#rainFade)">
-        <tspan x="465" dy="0">1</tspan>
-        <tspan x="465" dy="15">3</tspan>
-        <tspan x="465" dy="15">ﾓ</tspan>
-        <tspan x="465" dy="15">A</tspan>
-        <tspan x="465" dy="15">ﾊ</tspan>
-        <tspan x="465" dy="15">ﾂ</tspan>
-        <tspan x="465" dy="15">4</tspan>
-        <tspan x="465" dy="15">ﾊ</tspan>
-        <tspan x="465" dy="15">ｼ</tspan>
-        <tspan x="465" dy="15">ﾅ</tspan>
-        <tspan x="465" dy="15">ｺ</tspan>
-        <tspan x="465" dy="15">ﾊ</tspan>
-        <tspan x="465" dy="15">D</tspan>
-        <tspan x="465" dy="15">ｵ</tspan>
-        <tspan x="465" dy="15">ﾒ</tspan>
-        <tspan x="465" dy="15">2</tspan>
-        <tspan x="465" dy="15">ｳ</tspan>
-        <tspan x="465" dy="15">ﾃ</tspan>
-        <tspan x="465" dy="15">ﾂ</tspan>
-        <tspan x="465" dy="15">A</tspan>
+    <g class="matrix-col" style="animation-duration: 2.7s; animation-delay: -2.5s;">
+      <text x="402" y="0" fill="url(#rainGrad)">
+        <tspan x="402" dy="0">ｷ</tspan>
+        <tspan x="402" dy="15">Z</tspan>
+        <tspan x="402" dy="15">ｻ</tspan>
+        <tspan x="402" dy="15">ﾔ</tspan>
+        <tspan x="402" dy="15">2</tspan>
+        <tspan x="402" dy="15">ｵ</tspan>
+        <tspan x="402" dy="15">ｶ</tspan>
+        <tspan x="402" dy="15">9</tspan>
+        <tspan x="402" dy="15">ｾ</tspan>
+        <tspan x="402" dy="15">ｵ</tspan>
+        <tspan x="402" dy="15">0</tspan>
+        <tspan x="402" dy="15">X</tspan>
+        <tspan x="402" dy="15">ｹ</tspan>
+        <tspan x="402" dy="15">0</tspan>
+        <tspan x="402" dy="15">ｺ</tspan>
+        <tspan x="402" dy="15">ﾊ</tspan>
+        <tspan x="402" dy="15">ｵ</tspan>
+        <tspan x="402" dy="15">5</tspan>
+        <tspan x="402" dy="15">A</tspan>
+        <tspan x="402" dy="15">ﾐ</tspan>
+        <tspan x="402" dy="15">ｹ</tspan>
+        <tspan x="402" dy="15">ﾗ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.3s; animation-delay: -1.4s;">
-      <text x="495" y="0" fill="url(#rainFade)">
-        <tspan x="495" dy="0">ﾜ</tspan>
-        <tspan x="495" dy="15">2</tspan>
-        <tspan x="495" dy="15">ｿ</tspan>
-        <tspan x="495" dy="15">8</tspan>
-        <tspan x="495" dy="15">ｶ</tspan>
-        <tspan x="495" dy="15">ｹ</tspan>
-        <tspan x="495" dy="15">A</tspan>
-        <tspan x="495" dy="15">3</tspan>
-        <tspan x="495" dy="15">ｴ</tspan>
-        <tspan x="495" dy="15">9</tspan>
-        <tspan x="495" dy="15">ｼ</tspan>
-        <tspan x="495" dy="15">ｴ</tspan>
-        <tspan x="495" dy="15">ｺ</tspan>
-        <tspan x="495" dy="15">6</tspan>
-        <tspan x="495" dy="15">E</tspan>
-        <tspan x="495" dy="15">1</tspan>
-        <tspan x="495" dy="15">ﾆ</tspan>
-        <tspan x="495" dy="15">ﾜ</tspan>
-        <tspan x="495" dy="15">ｺ</tspan>
-        <tspan x="495" dy="15">2</tspan>
+    <g class="matrix-col" style="animation-duration: 3.6s; animation-delay: -1.2s;">
+      <text x="428" y="0" fill="url(#rainGrad)">
+        <tspan x="428" dy="0">ﾜ</tspan>
+        <tspan x="428" dy="15">ｻ</tspan>
+        <tspan x="428" dy="15">B</tspan>
+        <tspan x="428" dy="15">X</tspan>
+        <tspan x="428" dy="15">ﾕ</tspan>
+        <tspan x="428" dy="15">ﾃ</tspan>
+        <tspan x="428" dy="15">ﾅ</tspan>
+        <tspan x="428" dy="15">ﾓ</tspan>
+        <tspan x="428" dy="15">ｻ</tspan>
+        <tspan x="428" dy="15">1</tspan>
+        <tspan x="428" dy="15">3</tspan>
+        <tspan x="428" dy="15">5</tspan>
+        <tspan x="428" dy="15">ﾗ</tspan>
+        <tspan x="428" dy="15">ﾃ</tspan>
+        <tspan x="428" dy="15">ﾘ</tspan>
+        <tspan x="428" dy="15">ｿ</tspan>
+        <tspan x="428" dy="15">8</tspan>
+        <tspan x="428" dy="15">ｳ</tspan>
+        <tspan x="428" dy="15">7</tspan>
+        <tspan x="428" dy="15">ｳ</tspan>
+        <tspan x="428" dy="15">6</tspan>
+        <tspan x="428" dy="15">0</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 2.7s; animation-delay: -4.8s;">
-      <text x="525" y="0" fill="url(#rainFade)">
-        <tspan x="525" dy="0">ﾓ</tspan>
-        <tspan x="525" dy="15">ｳ</tspan>
-        <tspan x="525" dy="15">1</tspan>
-        <tspan x="525" dy="15">ﾊ</tspan>
-        <tspan x="525" dy="15">ﾗ</tspan>
-        <tspan x="525" dy="15">A</tspan>
-        <tspan x="525" dy="15">ﾆ</tspan>
-        <tspan x="525" dy="15">ｷ</tspan>
-        <tspan x="525" dy="15">5</tspan>
-        <tspan x="525" dy="15">3</tspan>
-        <tspan x="525" dy="15">ﾇ</tspan>
-        <tspan x="525" dy="15">9</tspan>
-        <tspan x="525" dy="15">ｼ</tspan>
-        <tspan x="525" dy="15">ﾆ</tspan>
-        <tspan x="525" dy="15">ｦ</tspan>
-        <tspan x="525" dy="15">F</tspan>
-        <tspan x="525" dy="15">ｶ</tspan>
-        <tspan x="525" dy="15">ﾈ</tspan>
-        <tspan x="525" dy="15">ﾈ</tspan>
-        <tspan x="525" dy="15">D</tspan>
+    <g class="matrix-col" style="animation-duration: 2.4s; animation-delay: -3.9s;">
+      <text x="454" y="0" fill="url(#rainGrad)">
+        <tspan x="454" dy="0">ﾅ</tspan>
+        <tspan x="454" dy="15">1</tspan>
+        <tspan x="454" dy="15">C</tspan>
+        <tspan x="454" dy="15">ﾘ</tspan>
+        <tspan x="454" dy="15">ﾒ</tspan>
+        <tspan x="454" dy="15">ﾒ</tspan>
+        <tspan x="454" dy="15">ｴ</tspan>
+        <tspan x="454" dy="15">ﾀ</tspan>
+        <tspan x="454" dy="15">7</tspan>
+        <tspan x="454" dy="15">ﾐ</tspan>
+        <tspan x="454" dy="15">F</tspan>
+        <tspan x="454" dy="15">ｽ</tspan>
+        <tspan x="454" dy="15">2</tspan>
+        <tspan x="454" dy="15">0</tspan>
+        <tspan x="454" dy="15">ﾅ</tspan>
+        <tspan x="454" dy="15">5</tspan>
+        <tspan x="454" dy="15">ｽ</tspan>
+        <tspan x="454" dy="15">ﾐ</tspan>
+        <tspan x="454" dy="15">ｼ</tspan>
+        <tspan x="454" dy="15">ﾊ</tspan>
+        <tspan x="454" dy="15">ﾗ</tspan>
+        <tspan x="454" dy="15">ﾇ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 5.3s; animation-delay: -2.2s;">
-      <text x="555" y="0" fill="url(#rainFade)">
-        <tspan x="555" dy="0">ｵ</tspan>
-        <tspan x="555" dy="15">0</tspan>
-        <tspan x="555" dy="15">ｦ</tspan>
-        <tspan x="555" dy="15">ｦ</tspan>
-        <tspan x="555" dy="15">6</tspan>
-        <tspan x="555" dy="15">4</tspan>
-        <tspan x="555" dy="15">D</tspan>
-        <tspan x="555" dy="15">6</tspan>
-        <tspan x="555" dy="15">7</tspan>
-        <tspan x="555" dy="15">ｻ</tspan>
-        <tspan x="555" dy="15">ｦ</tspan>
-        <tspan x="555" dy="15">ｳ</tspan>
-        <tspan x="555" dy="15">8</tspan>
-        <tspan x="555" dy="15">ｿ</tspan>
-        <tspan x="555" dy="15">0</tspan>
-        <tspan x="555" dy="15">ｾ</tspan>
-        <tspan x="555" dy="15">ﾆ</tspan>
-        <tspan x="555" dy="15">ﾑ</tspan>
-        <tspan x="555" dy="15">B</tspan>
-        <tspan x="555" dy="15">D</tspan>
+    <g class="matrix-col" style="animation-duration: 4.4s; animation-delay: -1.9s;">
+      <text x="480" y="0" fill="url(#rainGrad)">
+        <tspan x="480" dy="0">ﾕ</tspan>
+        <tspan x="480" dy="15">ｱ</tspan>
+        <tspan x="480" dy="15">ｵ</tspan>
+        <tspan x="480" dy="15">ﾔ</tspan>
+        <tspan x="480" dy="15">ﾐ</tspan>
+        <tspan x="480" dy="15">ﾓ</tspan>
+        <tspan x="480" dy="15">ﾜ</tspan>
+        <tspan x="480" dy="15">ﾑ</tspan>
+        <tspan x="480" dy="15">ﾆ</tspan>
+        <tspan x="480" dy="15">4</tspan>
+        <tspan x="480" dy="15">ﾐ</tspan>
+        <tspan x="480" dy="15">ﾜ</tspan>
+        <tspan x="480" dy="15">ﾓ</tspan>
+        <tspan x="480" dy="15">A</tspan>
+        <tspan x="480" dy="15">ﾊ</tspan>
+        <tspan x="480" dy="15">Y</tspan>
+        <tspan x="480" dy="15">ﾑ</tspan>
+        <tspan x="480" dy="15">ﾑ</tspan>
+        <tspan x="480" dy="15">ｷ</tspan>
+        <tspan x="480" dy="15">ﾗ</tspan>
+        <tspan x="480" dy="15">A</tspan>
+        <tspan x="480" dy="15">E</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.6s; animation-delay: -3.7s;">
-      <text x="585" y="0" fill="url(#rainFade)">
-        <tspan x="585" dy="0">ﾎ</tspan>
-        <tspan x="585" dy="15">ﾇ</tspan>
-        <tspan x="585" dy="15">ﾘ</tspan>
-        <tspan x="585" dy="15">ｦ</tspan>
-        <tspan x="585" dy="15">ｷ</tspan>
-        <tspan x="585" dy="15">ｱ</tspan>
-        <tspan x="585" dy="15">ﾑ</tspan>
-        <tspan x="585" dy="15">ﾏ</tspan>
-        <tspan x="585" dy="15">ﾋ</tspan>
-        <tspan x="585" dy="15">ﾜ</tspan>
-        <tspan x="585" dy="15">ﾓ</tspan>
-        <tspan x="585" dy="15">ﾗ</tspan>
-        <tspan x="585" dy="15">D</tspan>
-        <tspan x="585" dy="15">C</tspan>
-        <tspan x="585" dy="15">ｿ</tspan>
-        <tspan x="585" dy="15">ﾒ</tspan>
-        <tspan x="585" dy="15">2</tspan>
-        <tspan x="585" dy="15">ﾘ</tspan>
-        <tspan x="585" dy="15">ﾀ</tspan>
-        <tspan x="585" dy="15">ﾑ</tspan>
+    <g class="matrix-col" style="animation-duration: 3s; animation-delay: -3s;">
+      <text x="506" y="0" fill="url(#rainGrad)">
+        <tspan x="506" dy="0">ﾒ</tspan>
+        <tspan x="506" dy="15">ｱ</tspan>
+        <tspan x="506" dy="15">ｿ</tspan>
+        <tspan x="506" dy="15">ﾘ</tspan>
+        <tspan x="506" dy="15">ﾘ</tspan>
+        <tspan x="506" dy="15">3</tspan>
+        <tspan x="506" dy="15">ﾓ</tspan>
+        <tspan x="506" dy="15">ｱ</tspan>
+        <tspan x="506" dy="15">ﾓ</tspan>
+        <tspan x="506" dy="15">ｴ</tspan>
+        <tspan x="506" dy="15">5</tspan>
+        <tspan x="506" dy="15">Y</tspan>
+        <tspan x="506" dy="15">7</tspan>
+        <tspan x="506" dy="15">ﾕ</tspan>
+        <tspan x="506" dy="15">ｼ</tspan>
+        <tspan x="506" dy="15">Y</tspan>
+        <tspan x="506" dy="15">1</tspan>
+        <tspan x="506" dy="15">ｾ</tspan>
+        <tspan x="506" dy="15">ﾆ</tspan>
+        <tspan x="506" dy="15">1</tspan>
+        <tspan x="506" dy="15">7</tspan>
+        <tspan x="506" dy="15">A</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.1s; animation-delay: -1s;">
-      <text x="615" y="0" fill="url(#rainFade)">
-        <tspan x="615" dy="0">ﾕ</tspan>
-        <tspan x="615" dy="15">ｽ</tspan>
-        <tspan x="615" dy="15">0</tspan>
-        <tspan x="615" dy="15">ｾ</tspan>
-        <tspan x="615" dy="15">ﾆ</tspan>
-        <tspan x="615" dy="15">0</tspan>
-        <tspan x="615" dy="15">1</tspan>
-        <tspan x="615" dy="15">ﾗ</tspan>
-        <tspan x="615" dy="15">ｱ</tspan>
-        <tspan x="615" dy="15">ﾋ</tspan>
-        <tspan x="615" dy="15">ｿ</tspan>
-        <tspan x="615" dy="15">ｿ</tspan>
-        <tspan x="615" dy="15">ｺ</tspan>
-        <tspan x="615" dy="15">ｷ</tspan>
-        <tspan x="615" dy="15">ｷ</tspan>
-        <tspan x="615" dy="15">ﾆ</tspan>
-        <tspan x="615" dy="15">2</tspan>
-        <tspan x="615" dy="15">ﾜ</tspan>
-        <tspan x="615" dy="15">ﾓ</tspan>
-        <tspan x="615" dy="15">ﾊ</tspan>
+    <g class="matrix-col" style="animation-duration: 3.4s; animation-delay: -0.8s;">
+      <text x="532" y="0" fill="url(#rainGrad)">
+        <tspan x="532" dy="0">ﾎ</tspan>
+        <tspan x="532" dy="15">6</tspan>
+        <tspan x="532" dy="15">8</tspan>
+        <tspan x="532" dy="15">ｹ</tspan>
+        <tspan x="532" dy="15">ｴ</tspan>
+        <tspan x="532" dy="15">ｿ</tspan>
+        <tspan x="532" dy="15">Y</tspan>
+        <tspan x="532" dy="15">ﾊ</tspan>
+        <tspan x="532" dy="15">F</tspan>
+        <tspan x="532" dy="15">Z</tspan>
+        <tspan x="532" dy="15">ｺ</tspan>
+        <tspan x="532" dy="15">ﾃ</tspan>
+        <tspan x="532" dy="15">ｽ</tspan>
+        <tspan x="532" dy="15">2</tspan>
+        <tspan x="532" dy="15">F</tspan>
+        <tspan x="532" dy="15">ﾕ</tspan>
+        <tspan x="532" dy="15">ﾘ</tspan>
+        <tspan x="532" dy="15">ﾕ</tspan>
+        <tspan x="532" dy="15">Y</tspan>
+        <tspan x="532" dy="15">1</tspan>
+        <tspan x="532" dy="15">D</tspan>
+        <tspan x="532" dy="15">ｵ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 2.6s; animation-delay: -4.5s;">
-      <text x="645" y="0" fill="url(#rainFade)">
-        <tspan x="645" dy="0">B</tspan>
-        <tspan x="645" dy="15">ｵ</tspan>
-        <tspan x="645" dy="15">1</tspan>
-        <tspan x="645" dy="15">8</tspan>
-        <tspan x="645" dy="15">ﾂ</tspan>
-        <tspan x="645" dy="15">ｳ</tspan>
-        <tspan x="645" dy="15">7</tspan>
-        <tspan x="645" dy="15">ﾕ</tspan>
-        <tspan x="645" dy="15">ﾜ</tspan>
-        <tspan x="645" dy="15">ｵ</tspan>
-        <tspan x="645" dy="15">ｻ</tspan>
-        <tspan x="645" dy="15">ﾈ</tspan>
-        <tspan x="645" dy="15">B</tspan>
-        <tspan x="645" dy="15">ｦ</tspan>
-        <tspan x="645" dy="15">1</tspan>
-        <tspan x="645" dy="15">B</tspan>
-        <tspan x="645" dy="15">ｳ</tspan>
-        <tspan x="645" dy="15">ｳ</tspan>
-        <tspan x="645" dy="15">ﾂ</tspan>
-        <tspan x="645" dy="15">7</tspan>
+    <g class="matrix-col" style="animation-duration: 2.2s; animation-delay: -3.7s;">
+      <text x="558" y="0" fill="url(#rainGrad)">
+        <tspan x="558" dy="0">ﾒ</tspan>
+        <tspan x="558" dy="15">ﾔ</tspan>
+        <tspan x="558" dy="15">3</tspan>
+        <tspan x="558" dy="15">ﾒ</tspan>
+        <tspan x="558" dy="15">ｷ</tspan>
+        <tspan x="558" dy="15">ﾓ</tspan>
+        <tspan x="558" dy="15">ﾐ</tspan>
+        <tspan x="558" dy="15">ﾕ</tspan>
+        <tspan x="558" dy="15">D</tspan>
+        <tspan x="558" dy="15">ﾕ</tspan>
+        <tspan x="558" dy="15">7</tspan>
+        <tspan x="558" dy="15">ﾃ</tspan>
+        <tspan x="558" dy="15">ﾂ</tspan>
+        <tspan x="558" dy="15">ｹ</tspan>
+        <tspan x="558" dy="15">ﾏ</tspan>
+        <tspan x="558" dy="15">ｷ</tspan>
+        <tspan x="558" dy="15">ﾇ</tspan>
+        <tspan x="558" dy="15">F</tspan>
+        <tspan x="558" dy="15">ｳ</tspan>
+        <tspan x="558" dy="15">7</tspan>
+        <tspan x="558" dy="15">6</tspan>
+        <tspan x="558" dy="15">6</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.8s; animation-delay: -2.9s;">
-      <text x="675" y="0" fill="url(#rainFade)">
-        <tspan x="675" dy="0">ｦ</tspan>
-        <tspan x="675" dy="15">ﾔ</tspan>
-        <tspan x="675" dy="15">ｵ</tspan>
-        <tspan x="675" dy="15">0</tspan>
-        <tspan x="675" dy="15">ｳ</tspan>
-        <tspan x="675" dy="15">F</tspan>
-        <tspan x="675" dy="15">ｶ</tspan>
-        <tspan x="675" dy="15">ﾋ</tspan>
-        <tspan x="675" dy="15">ﾊ</tspan>
-        <tspan x="675" dy="15">ﾔ</tspan>
-        <tspan x="675" dy="15">ﾐ</tspan>
-        <tspan x="675" dy="15">3</tspan>
-        <tspan x="675" dy="15">3</tspan>
-        <tspan x="675" dy="15">ﾒ</tspan>
-        <tspan x="675" dy="15">ﾀ</tspan>
-        <tspan x="675" dy="15">ｹ</tspan>
-        <tspan x="675" dy="15">B</tspan>
-        <tspan x="675" dy="15">8</tspan>
-        <tspan x="675" dy="15">ﾗ</tspan>
-        <tspan x="675" dy="15">0</tspan>
+    <g class="matrix-col" style="animation-duration: 3.9s; animation-delay: -2.4s;">
+      <text x="584" y="0" fill="url(#rainGrad)">
+        <tspan x="584" dy="0">ｻ</tspan>
+        <tspan x="584" dy="15">ｼ</tspan>
+        <tspan x="584" dy="15">ｱ</tspan>
+        <tspan x="584" dy="15">ｹ</tspan>
+        <tspan x="584" dy="15">ﾇ</tspan>
+        <tspan x="584" dy="15">8</tspan>
+        <tspan x="584" dy="15">ﾃ</tspan>
+        <tspan x="584" dy="15">ﾏ</tspan>
+        <tspan x="584" dy="15">ｱ</tspan>
+        <tspan x="584" dy="15">ﾑ</tspan>
+        <tspan x="584" dy="15">X</tspan>
+        <tspan x="584" dy="15">ｦ</tspan>
+        <tspan x="584" dy="15">F</tspan>
+        <tspan x="584" dy="15">F</tspan>
+        <tspan x="584" dy="15">ｵ</tspan>
+        <tspan x="584" dy="15">ｾ</tspan>
+        <tspan x="584" dy="15">6</tspan>
+        <tspan x="584" dy="15">7</tspan>
+        <tspan x="584" dy="15">ﾘ</tspan>
+        <tspan x="584" dy="15">ｴ</tspan>
+        <tspan x="584" dy="15">ﾋ</tspan>
+        <tspan x="584" dy="15">ﾂ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.3s; animation-delay: -0.7s;">
-      <text x="705" y="0" fill="url(#rainFade)">
-        <tspan x="705" dy="0">9</tspan>
-        <tspan x="705" dy="15">4</tspan>
-        <tspan x="705" dy="15">ﾗ</tspan>
-        <tspan x="705" dy="15">ﾗ</tspan>
-        <tspan x="705" dy="15">C</tspan>
-        <tspan x="705" dy="15">ﾑ</tspan>
-        <tspan x="705" dy="15">ｳ</tspan>
-        <tspan x="705" dy="15">7</tspan>
-        <tspan x="705" dy="15">7</tspan>
-        <tspan x="705" dy="15">D</tspan>
-        <tspan x="705" dy="15">F</tspan>
-        <tspan x="705" dy="15">ﾂ</tspan>
-        <tspan x="705" dy="15">1</tspan>
-        <tspan x="705" dy="15">ﾈ</tspan>
-        <tspan x="705" dy="15">ｳ</tspan>
-        <tspan x="705" dy="15">0</tspan>
-        <tspan x="705" dy="15">0</tspan>
-        <tspan x="705" dy="15">1</tspan>
-        <tspan x="705" dy="15">ﾋ</tspan>
-        <tspan x="705" dy="15">1</tspan>
+    <g class="matrix-col" style="animation-duration: 2.9s; animation-delay: -0.6s;">
+      <text x="610" y="0" fill="url(#rainGrad)">
+        <tspan x="610" dy="0">ｺ</tspan>
+        <tspan x="610" dy="15">ﾘ</tspan>
+        <tspan x="610" dy="15">ｶ</tspan>
+        <tspan x="610" dy="15">ﾒ</tspan>
+        <tspan x="610" dy="15">6</tspan>
+        <tspan x="610" dy="15">ｺ</tspan>
+        <tspan x="610" dy="15">B</tspan>
+        <tspan x="610" dy="15">ﾇ</tspan>
+        <tspan x="610" dy="15">X</tspan>
+        <tspan x="610" dy="15">5</tspan>
+        <tspan x="610" dy="15">0</tspan>
+        <tspan x="610" dy="15">ﾊ</tspan>
+        <tspan x="610" dy="15">ｳ</tspan>
+        <tspan x="610" dy="15">ｽ</tspan>
+        <tspan x="610" dy="15">ｺ</tspan>
+        <tspan x="610" dy="15">Z</tspan>
+        <tspan x="610" dy="15">8</tspan>
+        <tspan x="610" dy="15">ﾃ</tspan>
+        <tspan x="610" dy="15">E</tspan>
+        <tspan x="610" dy="15">ｺ</tspan>
+        <tspan x="610" dy="15">ｼ</tspan>
+        <tspan x="610" dy="15">1</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 5.4s; animation-delay: -3.4s;">
-      <text x="735" y="0" fill="url(#rainFade)">
-        <tspan x="735" dy="0">ﾕ</tspan>
-        <tspan x="735" dy="15">ｦ</tspan>
-        <tspan x="735" dy="15">9</tspan>
-        <tspan x="735" dy="15">4</tspan>
-        <tspan x="735" dy="15">ｿ</tspan>
-        <tspan x="735" dy="15">ｷ</tspan>
-        <tspan x="735" dy="15">ﾃ</tspan>
-        <tspan x="735" dy="15">1</tspan>
-        <tspan x="735" dy="15">ﾈ</tspan>
-        <tspan x="735" dy="15">ﾐ</tspan>
-        <tspan x="735" dy="15">ﾜ</tspan>
-        <tspan x="735" dy="15">C</tspan>
-        <tspan x="735" dy="15">ｵ</tspan>
-        <tspan x="735" dy="15">0</tspan>
-        <tspan x="735" dy="15">ﾘ</tspan>
-        <tspan x="735" dy="15">D</tspan>
-        <tspan x="735" dy="15">ﾗ</tspan>
-        <tspan x="735" dy="15">ｹ</tspan>
-        <tspan x="735" dy="15">ﾊ</tspan>
-        <tspan x="735" dy="15">ｻ</tspan>
+    <g class="matrix-col" style="animation-duration: 4.3s; animation-delay: -2.8s;">
+      <text x="636" y="0" fill="url(#rainGrad)">
+        <tspan x="636" dy="0">ﾆ</tspan>
+        <tspan x="636" dy="15">F</tspan>
+        <tspan x="636" dy="15">9</tspan>
+        <tspan x="636" dy="15">ｺ</tspan>
+        <tspan x="636" dy="15">2</tspan>
+        <tspan x="636" dy="15">6</tspan>
+        <tspan x="636" dy="15">9</tspan>
+        <tspan x="636" dy="15">C</tspan>
+        <tspan x="636" dy="15">B</tspan>
+        <tspan x="636" dy="15">ﾋ</tspan>
+        <tspan x="636" dy="15">ｳ</tspan>
+        <tspan x="636" dy="15">ﾕ</tspan>
+        <tspan x="636" dy="15">1</tspan>
+        <tspan x="636" dy="15">ｷ</tspan>
+        <tspan x="636" dy="15">2</tspan>
+        <tspan x="636" dy="15">ﾔ</tspan>
+        <tspan x="636" dy="15">2</tspan>
+        <tspan x="636" dy="15">8</tspan>
+        <tspan x="636" dy="15">ｿ</tspan>
+        <tspan x="636" dy="15">ﾆ</tspan>
+        <tspan x="636" dy="15">ﾔ</tspan>
+        <tspan x="636" dy="15">ﾔ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.5s; animation-delay: -1.8s;">
-      <text x="765" y="0" fill="url(#rainFade)">
-        <tspan x="765" dy="0">ﾔ</tspan>
-        <tspan x="765" dy="15">F</tspan>
-        <tspan x="765" dy="15">ﾂ</tspan>
-        <tspan x="765" dy="15">ｹ</tspan>
-        <tspan x="765" dy="15">ｿ</tspan>
-        <tspan x="765" dy="15">9</tspan>
-        <tspan x="765" dy="15">ﾇ</tspan>
-        <tspan x="765" dy="15">1</tspan>
-        <tspan x="765" dy="15">ｷ</tspan>
-        <tspan x="765" dy="15">0</tspan>
-        <tspan x="765" dy="15">ｹ</tspan>
-        <tspan x="765" dy="15">ﾓ</tspan>
-        <tspan x="765" dy="15">ｱ</tspan>
-        <tspan x="765" dy="15">ｿ</tspan>
-        <tspan x="765" dy="15">ｳ</tspan>
-        <tspan x="765" dy="15">ﾏ</tspan>
-        <tspan x="765" dy="15">ﾔ</tspan>
-        <tspan x="765" dy="15">ﾑ</tspan>
-        <tspan x="765" dy="15">ｦ</tspan>
-        <tspan x="765" dy="15">ﾋ</tspan>
+    <g class="matrix-col" style="animation-duration: 3.1s; animation-delay: -1.5s;">
+      <text x="662" y="0" fill="url(#rainGrad)">
+        <tspan x="662" dy="0">2</tspan>
+        <tspan x="662" dy="15">ｾ</tspan>
+        <tspan x="662" dy="15">ﾗ</tspan>
+        <tspan x="662" dy="15">ﾔ</tspan>
+        <tspan x="662" dy="15">4</tspan>
+        <tspan x="662" dy="15">6</tspan>
+        <tspan x="662" dy="15">Z</tspan>
+        <tspan x="662" dy="15">0</tspan>
+        <tspan x="662" dy="15">6</tspan>
+        <tspan x="662" dy="15">E</tspan>
+        <tspan x="662" dy="15">4</tspan>
+        <tspan x="662" dy="15">8</tspan>
+        <tspan x="662" dy="15">D</tspan>
+        <tspan x="662" dy="15">8</tspan>
+        <tspan x="662" dy="15">ﾅ</tspan>
+        <tspan x="662" dy="15">ﾃ</tspan>
+        <tspan x="662" dy="15">ｶ</tspan>
+        <tspan x="662" dy="15">4</tspan>
+        <tspan x="662" dy="15">ｼ</tspan>
+        <tspan x="662" dy="15">ﾊ</tspan>
+        <tspan x="662" dy="15">ﾕ</tspan>
+        <tspan x="662" dy="15">ｿ</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.4s; animation-delay: -4.2s;">
-      <text x="795" y="0" fill="url(#rainFade)">
-        <tspan x="795" dy="0">A</tspan>
-        <tspan x="795" dy="15">2</tspan>
-        <tspan x="795" dy="15">ｴ</tspan>
-        <tspan x="795" dy="15">F</tspan>
-        <tspan x="795" dy="15">E</tspan>
-        <tspan x="795" dy="15">3</tspan>
-        <tspan x="795" dy="15">A</tspan>
-        <tspan x="795" dy="15">0</tspan>
-        <tspan x="795" dy="15">ﾊ</tspan>
-        <tspan x="795" dy="15">7</tspan>
-        <tspan x="795" dy="15">ｦ</tspan>
-        <tspan x="795" dy="15">ｻ</tspan>
-        <tspan x="795" dy="15">ｾ</tspan>
-        <tspan x="795" dy="15">D</tspan>
-        <tspan x="795" dy="15">ｵ</tspan>
-        <tspan x="795" dy="15">ﾀ</tspan>
-        <tspan x="795" dy="15">ﾆ</tspan>
-        <tspan x="795" dy="15">ﾅ</tspan>
-        <tspan x="795" dy="15">ｹ</tspan>
-        <tspan x="795" dy="15">ｴ</tspan>
+    <g class="matrix-col" style="animation-duration: 3.7s; animation-delay: -3.4s;">
+      <text x="688" y="0" fill="url(#rainGrad)">
+        <tspan x="688" dy="0">ｱ</tspan>
+        <tspan x="688" dy="15">ｺ</tspan>
+        <tspan x="688" dy="15">ｻ</tspan>
+        <tspan x="688" dy="15">1</tspan>
+        <tspan x="688" dy="15">X</tspan>
+        <tspan x="688" dy="15">0</tspan>
+        <tspan x="688" dy="15">ﾀ</tspan>
+        <tspan x="688" dy="15">5</tspan>
+        <tspan x="688" dy="15">ﾗ</tspan>
+        <tspan x="688" dy="15">ﾓ</tspan>
+        <tspan x="688" dy="15">ｹ</tspan>
+        <tspan x="688" dy="15">ﾑ</tspan>
+        <tspan x="688" dy="15">C</tspan>
+        <tspan x="688" dy="15">ﾂ</tspan>
+        <tspan x="688" dy="15">ｿ</tspan>
+        <tspan x="688" dy="15">9</tspan>
+        <tspan x="688" dy="15">2</tspan>
+        <tspan x="688" dy="15">2</tspan>
+        <tspan x="688" dy="15">C</tspan>
+        <tspan x="688" dy="15">ﾘ</tspan>
+        <tspan x="688" dy="15">ﾂ</tspan>
+        <tspan x="688" dy="15">5</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 2.8s; animation-delay: -2.5s;">
-      <text x="825" y="0" fill="url(#rainFade)">
-        <tspan x="825" dy="0">ﾈ</tspan>
-        <tspan x="825" dy="15">0</tspan>
-        <tspan x="825" dy="15">ﾒ</tspan>
-        <tspan x="825" dy="15">ｵ</tspan>
-        <tspan x="825" dy="15">1</tspan>
-        <tspan x="825" dy="15">4</tspan>
-        <tspan x="825" dy="15">ﾑ</tspan>
-        <tspan x="825" dy="15">ﾐ</tspan>
-        <tspan x="825" dy="15">ﾕ</tspan>
-        <tspan x="825" dy="15">8</tspan>
-        <tspan x="825" dy="15">ｦ</tspan>
-        <tspan x="825" dy="15">4</tspan>
-        <tspan x="825" dy="15">6</tspan>
-        <tspan x="825" dy="15">ﾜ</tspan>
-        <tspan x="825" dy="15">0</tspan>
-        <tspan x="825" dy="15">ﾑ</tspan>
-        <tspan x="825" dy="15">ﾓ</tspan>
-        <tspan x="825" dy="15">1</tspan>
-        <tspan x="825" dy="15">A</tspan>
-        <tspan x="825" dy="15">ｻ</tspan>
+    <g class="matrix-col" style="animation-duration: 2.5s; animation-delay: -2.1s;">
+      <text x="714" y="0" fill="url(#rainGrad)">
+        <tspan x="714" dy="0">ﾑ</tspan>
+        <tspan x="714" dy="15">ﾕ</tspan>
+        <tspan x="714" dy="15">A</tspan>
+        <tspan x="714" dy="15">ﾕ</tspan>
+        <tspan x="714" dy="15">B</tspan>
+        <tspan x="714" dy="15">ｵ</tspan>
+        <tspan x="714" dy="15">ﾊ</tspan>
+        <tspan x="714" dy="15">ｺ</tspan>
+        <tspan x="714" dy="15">8</tspan>
+        <tspan x="714" dy="15">7</tspan>
+        <tspan x="714" dy="15">Y</tspan>
+        <tspan x="714" dy="15">ｺ</tspan>
+        <tspan x="714" dy="15">B</tspan>
+        <tspan x="714" dy="15">ｵ</tspan>
+        <tspan x="714" dy="15">ｱ</tspan>
+        <tspan x="714" dy="15">2</tspan>
+        <tspan x="714" dy="15">9</tspan>
+        <tspan x="714" dy="15">ﾈ</tspan>
+        <tspan x="714" dy="15">ﾊ</tspan>
+        <tspan x="714" dy="15">0</tspan>
+        <tspan x="714" dy="15">ｳ</tspan>
+        <tspan x="714" dy="15">C</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 4.6s; animation-delay: -0.3s;">
-      <text x="855" y="0" fill="url(#rainFade)">
-        <tspan x="855" dy="0">ﾘ</tspan>
-        <tspan x="855" dy="15">ﾇ</tspan>
-        <tspan x="855" dy="15">ｽ</tspan>
-        <tspan x="855" dy="15">1</tspan>
-        <tspan x="855" dy="15">ﾗ</tspan>
-        <tspan x="855" dy="15">ﾘ</tspan>
-        <tspan x="855" dy="15">0</tspan>
-        <tspan x="855" dy="15">6</tspan>
-        <tspan x="855" dy="15">8</tspan>
-        <tspan x="855" dy="15">ﾊ</tspan>
-        <tspan x="855" dy="15">5</tspan>
-        <tspan x="855" dy="15">B</tspan>
-        <tspan x="855" dy="15">ｱ</tspan>
-        <tspan x="855" dy="15">ﾕ</tspan>
-        <tspan x="855" dy="15">2</tspan>
-        <tspan x="855" dy="15">ﾒ</tspan>
-        <tspan x="855" dy="15">9</tspan>
-        <tspan x="855" dy="15">ﾜ</tspan>
-        <tspan x="855" dy="15">ﾘ</tspan>
-        <tspan x="855" dy="15">9</tspan>
+    <g class="matrix-col" style="animation-duration: 3.8s; animation-delay: -0.3s;">
+      <text x="740" y="0" fill="url(#rainGrad)">
+        <tspan x="740" dy="0">ﾇ</tspan>
+        <tspan x="740" dy="15">ｷ</tspan>
+        <tspan x="740" dy="15">ﾘ</tspan>
+        <tspan x="740" dy="15">2</tspan>
+        <tspan x="740" dy="15">2</tspan>
+        <tspan x="740" dy="15">D</tspan>
+        <tspan x="740" dy="15">1</tspan>
+        <tspan x="740" dy="15">ｹ</tspan>
+        <tspan x="740" dy="15">ｺ</tspan>
+        <tspan x="740" dy="15">Y</tspan>
+        <tspan x="740" dy="15">Y</tspan>
+        <tspan x="740" dy="15">E</tspan>
+        <tspan x="740" dy="15">ﾇ</tspan>
+        <tspan x="740" dy="15">ﾃ</tspan>
+        <tspan x="740" dy="15">ﾓ</tspan>
+        <tspan x="740" dy="15">3</tspan>
+        <tspan x="740" dy="15">4</tspan>
+        <tspan x="740" dy="15">9</tspan>
+        <tspan x="740" dy="15">ｴ</tspan>
+        <tspan x="740" dy="15">ｵ</tspan>
+        <tspan x="740" dy="15">ﾇ</tspan>
+        <tspan x="740" dy="15">1</tspan>
       </text>
     </g>
-    <g class="matrix-col" style="animation-duration: 3.7s; animation-delay: -3.9s;">
-      <text x="885" y="0" fill="url(#rainFade)">
-        <tspan x="885" dy="0">A</tspan>
-        <tspan x="885" dy="15">ｱ</tspan>
-        <tspan x="885" dy="15">4</tspan>
-        <tspan x="885" dy="15">ｿ</tspan>
-        <tspan x="885" dy="15">ﾋ</tspan>
-        <tspan x="885" dy="15">E</tspan>
-        <tspan x="885" dy="15">ｳ</tspan>
-        <tspan x="885" dy="15">ｿ</tspan>
-        <tspan x="885" dy="15">ﾕ</tspan>
-        <tspan x="885" dy="15">ｾ</tspan>
-        <tspan x="885" dy="15">ﾈ</tspan>
-        <tspan x="885" dy="15">ｱ</tspan>
-        <tspan x="885" dy="15">ｷ</tspan>
-        <tspan x="885" dy="15">ﾗ</tspan>
-        <tspan x="885" dy="15">ｶ</tspan>
-        <tspan x="885" dy="15">1</tspan>
-        <tspan x="885" dy="15">ﾊ</tspan>
-        <tspan x="885" dy="15">ｻ</tspan>
-        <tspan x="885" dy="15">ｹ</tspan>
-        <tspan x="885" dy="15">ｱ</tspan>
+    <g class="matrix-col" style="animation-duration: 3.3s; animation-delay: -3.2s;">
+      <text x="766" y="0" fill="url(#rainGrad)">
+        <tspan x="766" dy="0">ﾒ</tspan>
+        <tspan x="766" dy="15">ﾎ</tspan>
+        <tspan x="766" dy="15">ｵ</tspan>
+        <tspan x="766" dy="15">9</tspan>
+        <tspan x="766" dy="15">ﾑ</tspan>
+        <tspan x="766" dy="15">0</tspan>
+        <tspan x="766" dy="15">ﾔ</tspan>
+        <tspan x="766" dy="15">ｽ</tspan>
+        <tspan x="766" dy="15">B</tspan>
+        <tspan x="766" dy="15">ﾀ</tspan>
+        <tspan x="766" dy="15">ﾋ</tspan>
+        <tspan x="766" dy="15">ﾀ</tspan>
+        <tspan x="766" dy="15">A</tspan>
+        <tspan x="766" dy="15">ﾋ</tspan>
+        <tspan x="766" dy="15">X</tspan>
+        <tspan x="766" dy="15">9</tspan>
+        <tspan x="766" dy="15">ｳ</tspan>
+        <tspan x="766" dy="15">ｺ</tspan>
+        <tspan x="766" dy="15">ｹ</tspan>
+        <tspan x="766" dy="15">ﾈ</tspan>
+        <tspan x="766" dy="15">ﾅ</tspan>
+        <tspan x="766" dy="15">0</tspan>
+      </text>
+    </g>
+    <g class="matrix-col" style="animation-duration: 2.7s; animation-delay: -1.7s;">
+      <text x="792" y="0" fill="url(#rainGrad)">
+        <tspan x="792" dy="0">ｼ</tspan>
+        <tspan x="792" dy="15">X</tspan>
+        <tspan x="792" dy="15">ﾋ</tspan>
+        <tspan x="792" dy="15">ﾋ</tspan>
+        <tspan x="792" dy="15">A</tspan>
+        <tspan x="792" dy="15">6</tspan>
+        <tspan x="792" dy="15">ﾃ</tspan>
+        <tspan x="792" dy="15">ｽ</tspan>
+        <tspan x="792" dy="15">ﾃ</tspan>
+        <tspan x="792" dy="15">X</tspan>
+        <tspan x="792" dy="15">ｽ</tspan>
+        <tspan x="792" dy="15">ｳ</tspan>
+        <tspan x="792" dy="15">ﾃ</tspan>
+        <tspan x="792" dy="15">9</tspan>
+        <tspan x="792" dy="15">ﾃ</tspan>
+        <tspan x="792" dy="15">ﾕ</tspan>
+        <tspan x="792" dy="15">ｷ</tspan>
+        <tspan x="792" dy="15">1</tspan>
+        <tspan x="792" dy="15">ﾀ</tspan>
+        <tspan x="792" dy="15">X</tspan>
+        <tspan x="792" dy="15">ﾎ</tspan>
+        <tspan x="792" dy="15">ｳ</tspan>
+      </text>
+    </g>
+    <g class="matrix-col" style="animation-duration: 4s; animation-delay: -3.6s;">
+      <text x="818" y="0" fill="url(#rainGrad)">
+        <tspan x="818" dy="0">ｽ</tspan>
+        <tspan x="818" dy="15">4</tspan>
+        <tspan x="818" dy="15">ｶ</tspan>
+        <tspan x="818" dy="15">5</tspan>
+        <tspan x="818" dy="15">5</tspan>
+        <tspan x="818" dy="15">ﾗ</tspan>
+        <tspan x="818" dy="15">ﾑ</tspan>
+        <tspan x="818" dy="15">ﾘ</tspan>
+        <tspan x="818" dy="15">X</tspan>
+        <tspan x="818" dy="15">Z</tspan>
+        <tspan x="818" dy="15">ﾆ</tspan>
+        <tspan x="818" dy="15">ﾑ</tspan>
+        <tspan x="818" dy="15">D</tspan>
+        <tspan x="818" dy="15">ｹ</tspan>
+        <tspan x="818" dy="15">ｶ</tspan>
+        <tspan x="818" dy="15">4</tspan>
+        <tspan x="818" dy="15">ﾑ</tspan>
+        <tspan x="818" dy="15">ﾎ</tspan>
+        <tspan x="818" dy="15">ﾘ</tspan>
+        <tspan x="818" dy="15">ﾆ</tspan>
+        <tspan x="818" dy="15">X</tspan>
+        <tspan x="818" dy="15">ﾏ</tspan>
+      </text>
+    </g>
+    <g class="matrix-col" style="animation-duration: 2.9s; animation-delay: -2.3s;">
+      <text x="844" y="0" fill="url(#rainGrad)">
+        <tspan x="844" dy="0">2</tspan>
+        <tspan x="844" dy="15">ﾒ</tspan>
+        <tspan x="844" dy="15">6</tspan>
+        <tspan x="844" dy="15">ﾐ</tspan>
+        <tspan x="844" dy="15">ｽ</tspan>
+        <tspan x="844" dy="15">ｺ</tspan>
+        <tspan x="844" dy="15">2</tspan>
+        <tspan x="844" dy="15">ｶ</tspan>
+        <tspan x="844" dy="15">6</tspan>
+        <tspan x="844" dy="15">ﾈ</tspan>
+        <tspan x="844" dy="15">D</tspan>
+        <tspan x="844" dy="15">7</tspan>
+        <tspan x="844" dy="15">ｵ</tspan>
+        <tspan x="844" dy="15">ﾅ</tspan>
+        <tspan x="844" dy="15">1</tspan>
+        <tspan x="844" dy="15">5</tspan>
+        <tspan x="844" dy="15">0</tspan>
+        <tspan x="844" dy="15">ﾊ</tspan>
+        <tspan x="844" dy="15">ﾋ</tspan>
+        <tspan x="844" dy="15">ﾊ</tspan>
+        <tspan x="844" dy="15">Z</tspan>
+        <tspan x="844" dy="15">ｽ</tspan>
+      </text>
+    </g>
+    <g class="matrix-col" style="animation-duration: 3.6s; animation-delay: -0.9s;">
+      <text x="870" y="0" fill="url(#rainGrad)">
+        <tspan x="870" dy="0">ﾊ</tspan>
+        <tspan x="870" dy="15">ﾑ</tspan>
+        <tspan x="870" dy="15">ﾘ</tspan>
+        <tspan x="870" dy="15">9</tspan>
+        <tspan x="870" dy="15">ｹ</tspan>
+        <tspan x="870" dy="15">ｱ</tspan>
+        <tspan x="870" dy="15">B</tspan>
+        <tspan x="870" dy="15">ﾒ</tspan>
+        <tspan x="870" dy="15">1</tspan>
+        <tspan x="870" dy="15">5</tspan>
+        <tspan x="870" dy="15">ｶ</tspan>
+        <tspan x="870" dy="15">ﾎ</tspan>
+        <tspan x="870" dy="15">1</tspan>
+        <tspan x="870" dy="15">ﾂ</tspan>
+        <tspan x="870" dy="15">Y</tspan>
+        <tspan x="870" dy="15">1</tspan>
+        <tspan x="870" dy="15">ｱ</tspan>
+        <tspan x="870" dy="15">1</tspan>
+        <tspan x="870" dy="15">ﾕ</tspan>
+        <tspan x="870" dy="15">ｼ</tspan>
+        <tspan x="870" dy="15">ﾕ</tspan>
+        <tspan x="870" dy="15">X</tspan>
       </text>
     </g>
   </g>
 
-  <!-- VIGNETTE / TINT OVERLAY -->
-  <rect width="900" height="240" rx="10" fill="url(#vignette)" />
-
-  <!-- SUBTLE SCANLINE OVERLAY -->
-  <g opacity="0.12">
-    <line x1="0" y1="0" x2="900" y2="0" stroke="#00ff9d" stroke-width="2" style="animation: scanline 4s linear infinite;" />
+  <!-- ANIMATED SCANLINE -->
+  <g opacity="0.2">
+    <line x1="0" y1="0" x2="900" y2="0" stroke="#00ff9d" stroke-width="2.5" style="animation: scanline 3.5s linear infinite;" />
   </g>
 
   <!-- CYBER CORNER BRACKETS -->
   <g class="bracket">
     <!-- Top-Left -->
-    <path d="M 12 30 L 12 12 L 30 12" />
+    <path d="M 12 32 L 12 12 L 32 12" />
     <!-- Top-Right -->
-    <path d="M 888 30 L 888 12 L 870 12" />
+    <path d="M 888 32 L 888 12 L 868 12" />
     <!-- Bottom-Left -->
-    <path d="M 12 210 L 12 228 L 30 228" />
+    <path d="M 12 208 L 12 228 L 32 228" />
     <!-- Bottom-Right -->
-    <path d="M 888 210 L 888 228 L 870 228" />
-    <!-- Border Frame -->
-    <rect x="8" y="8" width="884" height="224" rx="8" fill="none" stroke="#00ff9d" stroke-width="1" stroke-opacity="0.18" />
+    <path d="M 888 208 L 888 228 L 868 228" />
+    <!-- Outer Border -->
+    <rect x="8" y="8" width="884" height="224" rx="8" fill="none" stroke="#00ff9d" stroke-width="1.2" stroke-opacity="0.35" />
   </g>
 
   <!-- CENTER HUD / TEXT -->
   <g transform="translate(450, 115)" text-anchor="middle">
-    <!-- HUD Center Panel -->
-    <rect x="-310" y="-65" width="620" height="130" rx="12" fill="#04070e" fill-opacity="0.78" stroke="#00ff9d" stroke-width="1" stroke-opacity="0.25" />
+    <!-- Center HUD Panel with Glassmorphism Border -->
+    <rect x="-315" y="-68" width="630" height="136" rx="14" fill="url(#hudGlow)" stroke="#00ff9d" stroke-width="1.2" stroke-opacity="0.45" />
     
     <!-- Top HUD status -->
-    <text x="0" y="-42" font-family="'Fira Code', monospace" font-size="10" fill="#00ff9d" opacity="0.6" letter-spacing="3">● SYSTEM.OVERRIDE // SECURITY_CLEARANCE: ROOT</text>
+    <text x="0" y="-44" font-family="'Fira Code', monospace" font-size="10" fill="#00ff9d" opacity="0.75" letter-spacing="3">● SYSTEM.OVERRIDE // SECURITY_CLEARANCE: ROOT</text>
     
     <!-- MAIN TITLE (ANIMATED RGB NEON) -->
-    <text x="0" y="15" class="rgb-title">Phoenix1302</text>
+    <text x="0" y="16" class="rgb-title">Phoenix1302</text>
     
     <!-- SUBTITLE -->
-    <text x="0" y="48" class="subtitle">[ GHOST_MODE // NETWORK_SYSTEMS // UNDETECTED ]</text>
+    <text x="0" y="50" class="subtitle">[ GHOST_MODE // NETWORK_SYSTEMS // UNDETECTED ]</text>
   </g>
 </svg>
