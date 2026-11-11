@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- HEADER BANNER (MATRIX RAIN + RGB NEON) -->
-<img src="./banner.svg" width="100%" alt="Phoenix1302 Banner"/>
+<img src="./banner.svg?v=2" width="100%" alt="Phoenix1302 Banner"/>
 
 <!-- TYPING ANIMATION -->
 <a href="https://github.com/Phoenix1302">
