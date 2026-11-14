@@ -32,7 +32,13 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=go,py,c,cpp,cs,java,rust,linux,docker,js,html,css,git,qt&theme=dark" />
+<a href="https://github.com/Phoenix1302/polyglot-probe">
+  <img src="https://skillicons.dev/icons?i=go,py,c,cpp,cs,java,rust,linux,docker,js,html,css,git,qt&theme=dark" alt="Tech Stack" />
+</a>
+
+<br/><br/>
+
+<sub>🔍 <i>Side-by-side concurrency & socket implementation across these runtimes:</i> <b><a href="https://github.com/Phoenix1302/polyglot-probe">polyglot-probe →</a></b></sub>
 
 </div>
 
