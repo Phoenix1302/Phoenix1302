@@ -33,7 +33,7 @@
 <div align="center">
 
 <a href="https://github.com/Phoenix1302/polyglot-probe">
-  <img src="https://skillicons.dev/icons?i=go,py,c,cpp,cs,java,rust,linux,docker,js,html,css,git,qt&theme=dark" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=go,py,c,cpp,cs,java,rust,linux,docker,js,ts,html,css,git&theme=dark" alt="Tech Stack" />
 </a>
 
 <br/><br/>
